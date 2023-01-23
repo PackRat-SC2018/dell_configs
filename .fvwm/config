@@ -1,0 +1,424 @@
+##################################
+#  ____________________________
+# (   _________________________)
+#  ) (__  _  _  _    _
+# (   __)( \/ )( \/\/ )/\/\
+#  ) (    \  /  \    //    \
+# (___)    \/    \/\/(_/\/\_) 3
+#
+#
+# Configuration file created 06-29-2022
+#
+#
+#################################
+
+#-----------------------------------------------------------------------
+# The default ImagePath for icons is:
+# /usr/include/X11/bitmap:/usr/include/X11/pixmaps
+#
+# If the fvwm_icons are not installed in one of these directories or if
+# you want to add a personal image put them here
+#-----------------------------------------------------------------------
+ImagePath $[FVWM_USERDIR]/icons:$[FVWM_USERDIR]/icons/scalable:+
+ImagePath +:/usr/share/pixmaps:/usr/share/icons
+
+# InfoStoreAdd can be used to store variable data internal to fvwm.
+# The variable can then be used in the configuration as $[infostore.name].
+#
+# You can also use environment variables but for data internal to fvwm
+# use InfoStore variables instead.
+#
+# The following is used in various menus and also sets the terminal
+# that FvwmConsole uses. Change this to your terminal of choice
+InfoStoreAdd terminal alacritty
+InfoStoreAdd STerminal st
+InfoStoreAdd XTerminal xterm
+InfoStoreAdd Kterminal kitty
+
+InfoStoreAdd Vbrowser brave
+InfoStoreAdd Fbrowser firefox
+InfoStoreAdd mail thunderbird
+InfoStoreAdd filemgr "xterm -e mc"
+InfoStoreAdd xfilemgr caja
+InfoStoreAdd rangercmd "xterm -e ranger"
+InfoStoreAdd gimpcmd gimp
+InfoStoreAdd editor sublime_text
+InfoStoreAdd screenlock "i3lock -c 292c50"
+InfoStoreAdd dmenucmd "dmenu_run -nb '#111111' -nf '#cccccc' -sb '#285678' -sf '#E6E6E6'"
+InfoStoreAdd roficmd "rofi -modi run,drun,window,combi -sidebar-mode -show run"
+InfoStoreAdd wallpaper "sxiv -bt $HOME/wallpaper/"
+InfoStoreAdd images "sxiv -bt /mnt/public/images/"
+InfoStoreAdd screenshot "maim -u ~/Screenshots/$(date +%F_%s).png"
+InfoStoreAdd screenshot5 "maim -u -d 5 ~/Screenshots/$(date +%F_%s).png"
+InfoStoreAdd screenshotS "maim -u -s ~/Screenshots/$(date +%F_%s).png"
+InfoStoreAdd screenshotC "maim -u | xclip -selection clipboard -t image/png"
+InfoStoreAdd image-viewer "sxiv"
+
+## alsa
+# InfoStoreAdd volumeup "amixer -q sset PCM 5%+ unmute"
+# InfoStoreAdd volumedown "amixer -q sset PCM 5%- unmute"
+# InfoStoreAdd mute "amixer set Master toggle -q"
+
+## pulse
+InfoStoreAdd pamixerup "pamixer -i 2"
+InfoStoreAdd pamixerdown "pamixer -d 2"
+InfoStoreAdd pamixermute "pamixer -t"
+
+# This is used for "Run Command" and the Meta+Space key-binding.
+# runcmd is the binary name and runcmdopt contains additional
+# command line options.
+InfoStoreAdd runcmd "dmenu_run"
+InfoStoreAdd runcmdopt "-nb '#151617'"
+
+# Default Font
+DefaultFont "xft:DejaVu Sans:Book:size=10:antialias=True:hintstyle=slight"
+
+# DesktopConfiguration sets how fvwm handles desktops:
+#
+# * global -- the default. This means all screens show the same desktops/pages.
+# * per-monitor -- every monitor has its own virtual desktop/pages.
+#     For this mode it's recommended that FvwmPager is configured to
+#     use the monitor configuration option, so that only windows on that
+#     specific monitor are shown.
+# * shared -- the virtual desktops are shared across all monitors and each
+#     monitor shows a single desktop at a time. If one monitor switches to a
+#     desktop currently being viewed by another, the two monitors swap which
+#     desktop they are viewing.  This is similar to how Xmonad or Herbsflutwm
+#     handle desks.  This mode only works with two or more monitors.
+#
+DesktopConfiguration global
+# DesktopConfiguration per-monitor
+# DesktopConfiguration shared
+
+# Desktops and Pages
+#
+# Fvwm has both Virtual Desktops and Pages. Each Desktop is built from
+# a grid of Pages. The following sets the name of four Desktops and then
+# divides each Desktop into a 2x2 grid of Pages that are positioned as
+#
+#   +---+---+
+#   |   |   |
+#   +---+---+
+#   |   |   |
+#   +---+---+
+#
+DesktopName 0 One
+DesktopName 1 Two
+DesktopName 2 Three
+DesktopName 3 Four
+
+DesktopSize 1x1
+3 DesktopSize 2x2
+# DesktopSize 3x3
+# DesktopSize 4x2
+
+# uncomment for tint2, mate-panel, or polybar use
+EwmhNumberOfDesktops 4 0
+
+# EdgeScroll will move the view port between the Pages when the mouse
+# moves to the edge of the screen. This set the amount of distance to
+# scroll at 100% (full page) and the EdgeResistance which is a timer
+# for how long the mouse as at the edge before it scrolls.
+#
+# Set EdgeScroll 0 0 and/or EdgeResistance -1 to disable.
+EdgeScroll 100 100
+
+#EdgeResistance 1200
+#Style * EdgeMoveDelay 350, EdgeMoveResistance 20
+
+#EdgeResistance scrolling
+#Style * EdgeMoveDelay scrolling
+#Style * EdgeMoveResistance moving
+
+# Disable EdgeScrolling but make it possible
+# to move windows over the screen edge
+EdgeResistance -1
+Style * EdgeMoveDelay 250
+Style * EdgeMoveResistance 20
+
+# Set thickness of the edge of the screen to 1
+EdgeThickness 1
+
+# EwmhBaseStruts [screen name] [left] [right] [top] [bottom]
+# Reserves space along the edge(s) of the Screen that will not
+# be covered when maximizing or placing windows.
+EwmhBaseStruts screen $[monitor.primary] 0 0 0 0
+# EwmhBaseStruts screen $[monitor.primary] 0 120 0 0
+# EwmhBaseStruts screen $[monitor.primary] 4 4 4 4
+# EwmhBaseStruts screen $[monitor.primary] 8 8 28 8
+
+#-----------------------------------------------------------------------
+# Use EWMH hints and respect EWMH hints which change the window layer.
+#-----------------------------------------------------------------------
+Style * EWMHUseStackingOrderHints
+
+# This sets the ClickTime and MoveThreshold used to determine
+# Double Clicks, Hold and Move for the mouse.
+ClickTime 250
+MoveThreshold 3
+
+#-----------------------------------------------------------------------
+# This command controls the cursor during the execution of certain commands
+#-----------------------------------------------------------------------
+BusyCursor * True
+
+# Sets the focus style to SloppyFocus and a mouse click
+# in a window will Raise it.
+# Style * SloppyFocus, MouseFocusClickRaises
+
+# Set focus to click-to-focus and mouse click raises window
+Style * ClickToFocus, MouseFocusClickRaises
+ColorMapFocus  FollowsMouse
+
+# Window Placement
+Style * MinOverlapPlacement, !UsePPosition
+Style * FPGrabFocus, FPReleaseFocus.
+
+# Transient Windows (such as open file windows)
+Style * DecorateTransient, DontLowerTransient, StackTransientParent
+Style * FPGrabFocusTransient, OverrideGrabFocus
+Style * FPReleaseFocus, FPReleaseFocusTransient, FPOverrideReleaseFocus.
+
+# Sets all windows to OpaqueMove (vs a wired frame) and  windows will
+# snap to each other and the edge of the screen.
+OpaqueMoveSize unlimited
+Style * ResizeOpaque, SnapAttraction 5 SameType ScreenAll, SnapGrid
+
+# WindowShade
+Style * WindowShadeScrolls, WindowShadeSteps 64
+
+# Layer Definitions - bottom put top, 2,4,6 default
+DefaultLayers 2 4 6
+
+# Ignore Numlock and other modifiers for bindings
+# See http://fvwm.org/documentation/faq/#why-do-numlock-capslock-and-scrolllock-interfere-with-clicktofocus-andor-my-mouse-bindings
+IgnoreModifiers L25
+
+#-----------------------------------------------------------------------
+# TileCascadePlacement automatically places new windows in a smart
+# location - a location in which they do not overlap any other windows
+# on the screen.
+#-----------------------------------------------------------------------
+Style * TileCascadePlacement
+
+#-----------------------------------------------------------------------
+# Disables ConfigureNotify events that are usually sent to an application
+# while it is moved. If some windows flicker annoyingly while being moved,
+# this option may help
+#-----------------------------------------------------------------------
+BugOpts FlickeringMoveWorkaround True
+
+#-----------------------------------------------------------------------
+# Enabling this option might help for Qt applications using DragnDrop.
+# Surpresses the forwarding of unknown ClientEvent messages to windows
+# -- usually this is harmless, but Qt has problems handling unrecognised
+# ClientEvent messages.
+#-----------------------------------------------------------------------
+BugOpts QtDragnDropWorkaround True
+
+##############################################################################
+#
+# Local configuration file. For use with the default-config.
+#
+# If $FVWMUSER_DIR/local.config ($HOME/.fvwm/local.config by default)
+# exists, then read it. This allows changes to default-config settings
+# without needing a full copy of the default-config. This will also allow
+# default-config changes to get used after upgrades (if applicable).
+Test (f $[FVWM_USERDIR]/local.config) Read $[FVWM_USERDIR]/local.config
+
+#=======================================================================
+# Cursors
+#=======================================================================
+CursorStyle ROOT            left_ptr                black    white
+CursorStyle TITLE           left_ptr                black    white
+CursorStyle DEFAULT         left_ptr                black    white
+CursorStyle SYS             hand2                   black    white
+CursorStyle MENU            left_ptr                black    white
+CursorStyle POSITION        top_left_corner         black    white
+CursorStyle MOVE            fleur                   black    white
+CursorStyle RESIZE          sizing                  black    white
+CursorStyle WAIT            watch                   black    white
+CursorStyle SELECT          crosshair               black    white
+CursorStyle DESTROY         pirate                  black    white
+CursorStyle TOP             top_side                black    white
+CursorStyle RIGHT           right_side              black    white
+CursorStyle BOTTOM          bottom_side             black    white
+CursorStyle LEFT            left_side               black    white
+CursorStyle TOP_LEFT        top_left_corner         black    white
+CursorStyle TOP_RIGHT       top_right_corner        black    white
+CursorStyle BOTTOM_LEFT     bottom_left_corner      black    white
+CursorStyle BOTTOM_RIGHT    bottom_right_corner     black    white
+CursorStyle TOP_EDGE        top_side                black    white
+CursorStyle RIGHT_EDGE      right_side              black    white
+CursorStyle BOTTOM_EDGE     bottom_side             black    white
+CursorStyle LEFT_EDGE       left_side               black    white
+CursorStyle STROKE          plus                    black    white
+
+
+## Aplications
+#==========================================================================
+Style *Clock !Title, BorderWidth 7, HandleWidth 7, Sticky, StaysOnBottom, WindowListSkip, CirculateSkip, !Iconifiable, NeverFocus
+
+Style *XTerm	Icon /usr/share/icons/gnome/48x48/apps/utilities-terminal.png
+Style *st-256color Icon /usr/share/icons/gnome/48x48/apps/utilities-terminal.png
+Style *Rxvt		Icon /usr/share/icons/gnome/48x48/apps/utilities-terminal.png
+Style *XCalc    Icon /usr/share/pixmaps/galculator.xpm
+
+Style URxvt ResizeHintOverride, PositionPlacement Center
+Style *XTerm ResizeHintOverride, PositionPlacement Center
+Style kitty ResizeHintOverride, PositionPlacement Center
+Style st-256color ResizeHintOverride, PositionPlacement Center
+Style Mate-terminal ResizeHintOverride, PositionPlacement Center
+Style Tilix ResizeHintOverride, PositionPlacement Center
+Style Lilyterm ResizeHintOverride, PositionPlacement Center
+Style Alacritty ResizeHintOverride, PositionPlacement Center
+Style Sakura ResizeHintOverride, PositionPlacement Center
+
+Style Sublime_text ResizeHintOverride, PositionPlacement Center
+Style Firefox ResizeHintOverride, PositionPlacement Center
+Style Brave-browser ResizeHintOverride, PositionPlacement Center
+
+## Panels
+Style Polybar !Title, !Handles, !Borders, CirculateSkip, WindowListSkip, NeverFocus
+Style Xfce4-panel !Title, !Handles, !Borders, StaysOnTop, WindowListSkip, CirculateSkip
+Style Tint2 !Title, !Handles, !Borders, ResizeHintOverride, StaysOnBottom, WindowListSkip, CirculateSkip, PositionPlacement 0 -0
+Style Mate-panel !Title, !Handles, !Borders, ResizeHintOverride, StaysOnTop, NeverFocus, WindowListSkip, CirculateSkip, PositionPlacement 0 -0
+
+## Multimedia
+Style Gimp* ResizeHintOverride, PositionPlacement Center
+Style Gimp-2.10* ResizeHintOverride, PositionPlacement Center
+Style Deadbeef* ResizeHintOverride, PositionPlacement Center, StartsOnDesk 1
+
+# system tray applications
+Style stalonetray !Title, !Handles, !Borders, StaysOnBottom, WindowListSkip, CirculateSkip
+style trayer !Title, !Handles, !Borders, StaysOnBottom, WindowListSkip, CirculateSkip
+
+Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style FvwmScript-Quit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style FvwmScript-Date !Title, BorderWidth 3, HandleWidth 3, Sticky, WindowListSkip, CirculateSkip, !Iconifiable, PositionPlacement -10px -40px
+Style FvwmScript-Chronos !Title, PositionPlacement -4px +4px, BorderWidth 7, HandleWidth 7, Sticky, StaysOnBottom, WindowListSkip, CirculateSkip, !Iconifiable, NeverFocus
+
+######
+# 6: Window Decor
+#
+# Buttons Locations: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#
+#   1 - WindowOps Menu
+#   2 - Close
+#   4 - Maximize
+#   6 - Minimize
+###########
+
+DestroyDecor FvwmBlueDecor
+AddToDecor   FvwmBlueDecor
+
+Style * Font "xft:Fira Sans:Medium:size=11:antialias=True:hintstyle=slight"
+# Style * Font "xft:Cantarell:Regular:size=11:antialias=True:hintstyle=slight"
+
+Colorset 34  fg #CECECE, bg #292A2B, hi #494B4D, sh #0A0A0A, Plain, NoShape
+Colorset 35  fg #E6E6E6, bg #2D4966, hi #3E658F, sh #1B2B3D, Plain, NoShape
+
+# TitleStyle Centered Height 20 -- Raised
+# Style * !Title
+AddTitleStyle TitleAtLeft
+
+Style * Colorset 34
+Style * HilightColorset 35
+Style * BorderColorset 34, HilightBorderColorset 35
+Style * BorderWidth 5, HandleWidth 5, MWMButtons, MWMBorder, FirmBorder
+
+#ButtonStyle All ActiveUp Vector 5 15x15@4 15x85@3 85x85@3 85x15@3 15x15@3 -- Raised
+#ButtonStyle All ToggledActiveUp Vector 5 15x15@4 15x85@3 85x85@3 \
+                85x15@3 15x15@3 -- Raised
+#ButtonStyle All ActiveDown Vector 5 20x20@4 20x80@3 80x80@3 80x20@3 \
+                20x20@3 -- Raised
+#ButtonStyle All ToggledActiveDown Vector 5 20x20@4 20x80@3 80x80@3 \
+                80x20@3 20x20@3 -- Raised
+#ButtonStyle All ToggledInactive Vector 5 47x47@3 57x53@3 53x53@3 \
+                53x47@3 47x47@3 -- Raised
+#ButtonStyle All Inactive Vector 5 47x47@3 57x53@3 53x53@3 53x47@3 \
+                47x47@3 -- Raised
+ButtonStyle 1 Active Vector 5 40x25@1 60x25@1 60x75@0 40x75@0 40x25@1 -- Raised
+ButtonStyle 1 Inactive Vector 5 40x25@1 60x25@1 60x75@0 40x75@0 40x25@1 -- Raised
+
+ButtonStyle 3 Active Vector 4 50x25@1 75x75@0 25x75@0 50x25@1 -- Raised
+ButtonStyle 3 Inactive Vector 4 50x25@1 75x75@0 25x75@0 50x25@1 -- Raised
+
+ButtonStyle 5 Active Vector 4 50x75@1 25x25@1 75x25@1 50x75@0 -- Raised
+ButtonStyle 5 Inactive Vector 4 50x75@1 25x25@1 75x25@1 50x75@0 -- Raised
+
+ButtonStyle 2 Active Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1 -- Raised
+ButtonStyle 2 Inactive Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1 -- Raised
+
+ButtonStyle 4 Active Vector 10 25x40@1 20x40@1 20x80@1 60x80@1 60x65@1 35x65@0 85x65@0 85x10@0 30x10@1 30x65@1 -- Raised
+ButtonStyle 4 ToggledActive Vector 14 20x20@1 20x70@1 70x70@0 70x20@0 20x20@1 60x60@0 60x50@0 60x60@0 50x60@0 60x60@0 60x80@0 80x80@0 80x60@0 60x60@0 -- Raised
+ButtonStyle 4 Inactive Vector 10 25x40@1 20x40@1 20x80@1 60x80@1 60x65@1 35x65@0 85x65@0 85x10@0 30x10@1 30x65@1 -- Raised
+ButtonStyle 4 ToggledInactive Vector 14 20x20@1 20x70@1 70x70@0 70x20@0 20x20@1 60x60@0 60x50@0 60x60@0 50x60@0 60x60@0 60x80@0 80x80@0 80x60@0 60x60@0 -- Raised
+
+ButtonStyle 6 Active Vector 10 40x55@1 40x80@0 15x80@0 15x55@1 40x55@1 30x55@1 30x30@1 70x30@1 70x70@1 45x70@1 -- Raised
+ButtonStyle 6 Inactive Vector 10 40x55@1 40x80@0 15x80@0 15x55@1 40x55@1 30x55@1 30x30@1 70x30@1 70x70@1 45x70@1 -- Raised
+
+ButtonStyle All - Clear
+ButtonStyle 1 - MwmDecorMenu
+ButtonStyle 4 - MwmDecorMax
+ButtonStyle 6 - MwmDecorMin
+
+# Start Up
+#==============================================================================
+
+Read Colorsets
+# Read ArchlabsDecor
+# Read FirebrickDecor
+# Read SapphireDecor
+# Read MintDecor
+# Read WineDecor
+# Read MidnightDecor
+# Read AmazonDecor
+# Read MojaveDecor
+
+Read Menus
+Read Functions
+Read Bindings
+Read Modules
+Read TaskBars
+
+# Start Function
+#
+# The start function is run right after fvwm is done reading
+# the config file. This function run after each restart
+# so using Test (Init) or Test (Restart) can further control
+# actions that are run during the first time run (Init) or
+# actions that are run after a restart.
+DestroyFunc StartFunction
+AddToFunc   StartFunction
+#
+
+#+ I Module FvwmEvent EventNewDesk
+#+ I Module FvwmEvent FE-Maximize
+
+# + I Module FvwmPager 0 1
+# + + I Module FvwmIconMan
+# + I Module FvwmIconMan IconManDesk
+# + I Module FvwmIconMan IconManVert
+# + I Module FvwmButtons FvwmTaskBar
+
+## Clock and systemtray wallpaper
++ I Test (Init) Exec exec $[FVWM_USERDIR]/autostart
+# + I Test (Restart) Exec exec $[FVWM_USERDIR]/autostart
+
+## Conky
+# + I Test (Init) Exec exec "$HOME/bin/ConkyDesktop.sh" &
+# + I Test (Restart) Exec exec "$HOME/bin/ConkyDesktop.sh" &
+
+## Polybar
+# + I Test (Init) Exec exec "$HOME/bin/fvwm-bar.sh" &
+# + I Test (Restart) Exec exec "$HOME/bin/fvwm-bar.sh" &
+
+## tint2
+# + I Test (init) Exec exec tint2-bar.sh &
+# + I Test (Restart) Exec exec tint2-bar.sh &
+
+DestroyFunc ExitFunction
+AddToFunc   ExitFunction
++ I Test (!ToRestart) Exec exec rm -f $[HOME]/.fvwm/icon.tmp.*
++ I Test (!ToRestart) Exec exec rm -f $[FVWM_USERDIR]/temp/*icon*

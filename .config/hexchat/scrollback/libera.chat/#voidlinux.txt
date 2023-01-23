@@ -1,0 +1,4 @@
+T 1672622101 19*	Now talking on 22#voidlinux
+T 1672622101 22*	Topic for 22#voidlinux is: The Void Linux distribution https://www.voidlinux.org || images: https://repo-default.voidlinux.org/live/current || Getting Started: https://docs.voidlinux.org/xbps/ && https://docs.voidlinux.org/config/services/
+T 1672622101 22*	Topic for 22#voidlinux set by 26maldridge (24Thu Aug 18 13:23:18 2022)
+T 1672622311 FiSHLiM plugin unloaded

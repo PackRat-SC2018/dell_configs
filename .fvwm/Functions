@@ -1,0 +1,372 @@
+###########
+# Functions
+#
+# Fvwm can use custom functions for various tasks.
+# The syntax for defining a function named FunctionName is:
+#
+#   DestroyFunc FunctionName
+#   AddToFunc FunctionName
+#   + I [Action to do Immediately]
+#   + C [Action to do on a Mouse Click]
+#   + D [Action to do on a Mouse Double Click]
+#   + H [Action to do on a Mouse Hold]
+#   + M [Action to do on a Mouse Motion]
+###########
+
+# Mouse Bindings Functions
+DestroyFunc RaiseMoveX
+AddToFunc RaiseMoveX
++ I Raise
++ M $0
++ D $1
+
+DestroyFunc RaiseMove
+AddToFunc RaiseMove
++ I Raise
++ M $0
+
+DestroyFunc MoveAndFollow
+AddToFunc   MoveAndFollow
++ "I"       MoveToPage wrapx wrapy $0 $1
++ "I"       GotoPage   wrapx wrapy $0 $1
+
+# Function: ViewManPage $0
+#
+# This function loads the man page $0 in an terminal
+# and is used with the help menu.
+DestroyFunc ViewManPage
+AddToFunc   ViewManPage
++ I Exec exec $[infostore.XTerminal] -g 80x40 -n "Manual Page - $0" -T "Manual Page - $0" -e man "$0"
+
+# Function: SetBG $0
+#
+# SetBG is used with the background menu to set the background
+# image and configure it to be loaded the next time fvwm is run.
+# Note, fvwm-root can't use .jpeg or resize images. Use something
+# like display, feh, etc.
+DestroyFunc SetBG
+AddToFunc   SetBG
++ I Test (f $[FVWM_USERDIR]/images/background/$0) \
+    Exec exec fvwm-root $[FVWM_USERDIR]/images/background/$0
++ I TestRc (Match) Exec exec ln -fs images/background/$0 \
+    $[FVWM_USERDIR]/.BGdefault
++ I TestRc (Match) Break
++ I Test (!f $[FVWM_DATADIR]/default-config/images/background/$0) Break
++ I Exec exec fvwm-root $[FVWM_DATADIR]/default-config/images/background/$0
++ I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
+    $[FVWM_USERDIR]/.BGdefault
+
+# Function: ToggleTitle
+#
+# This function will toggle if fvwm shows the TitleBar.
+DestroyFunc ToggleTitle
+AddToFunc   ToggleTitle
++ I ThisWindow (HasTitle) WindowStyle !Title
++ I TestRc (NoMatch) WindowStyle Title
+
+# FvwmEvent
+#
+# FvwmEvent is a module that can run an action or function
+# on specific events. This instance changes which desk number
+# is highlighted when the desk is changed.
+DestroyModuleConfig EventNewDesk:*
+*EventNewDesk: PassID
+*EventNewDesk: new_desk ChangeDesk
+
+# Function: ChangeDesk
+#
+# This function is called by FvwmEvent every time the Desk is changed.
+DestroyFunc ChangeDesk
+AddToFunc   ChangeDesk
++ I SendToModule FvwmButtons ChangeButton desk0 Colorset 24
++ I SendToModule FvwmButtons ChangeButton desk1 Colorset 24
++ I SendToModule FvwmButtons ChangeButton desk2 Colorset 24
++ I SendToModule FvwmButtons ChangeButton desk3 Colorset 24
++ I SendToModule FvwmButtons ChangeButton desk$0 Colorset 25
+
+# Function: IconManClick
+#
+# This function is run from FvwmIconMan when the button is clicked.
+DestroyFunc IconManClick
+AddToFunc   IconManClick
++ I ThisWindow (Raised, !Shaded, !Iconic, CurrentPage) Iconify
++ I TestRc (Match) Break
++ I ThisWindow WindowShade off
++ I ThisWindow Iconify off
++ I ThisWindow Raise
++ I ThisWindow (AcceptsFocus) FlipFocus
+
+AddToFunc DeiconifyAndRearrange
++ C Iconify off
++ C All (CurrentPage, Iconic) PlaceAgain Icon
+
+AddToFunc IconFunc
++ C DeiconifyAndRearrange
++ M Raise
++ M Move
++ D DeiconifyAndRearrange
+
+# Function: ToggleTitle
+#
+# This function will toggle if fvwm shows the TitleBar.
+DestroyFunc ToggleTitle
+AddToFunc   ToggleTitle
++ I ThisWindow (State 1) WindowStyle Title
++ I TestRc (Match) State 1 False
++ I TestRc (Match) Break
++ I WindowStyle !Title
++ I State 1 True
+
+DestroyFunc ShowDesktop
+AddToFunc   ShowDesktop
++ I All (CurrentPage, Iconic, State 1) RestoreDesktop
++ I TestRc (Match) Break
++ I All (CurrentPage, !Iconic, !State 1) ThisWindow State 1 True
++ I All (CurrentPage, !Iconic, State 1) Iconify
+
+# Applications to start maximized
+
+DestroyFunc FileManCmd
+AddToFunc FileManCmd
++ I Exec exec xterm -e mc
++ I Wait xterm
+#+ I ThisWindow Raise
+#+ I ThisWindow (AcceptsFocus) FlipFocus
++ I Current Maximize $0 $1
+
+DestroyFunc RangerCmd
+AddToFunc RangerCmd
++ I Exec exec xterm -e ranger
++ I Wait xterm
+#+ I ThisWindow Raise
+#+ I ThisWindow (AcceptsFocus) FlipFocus
++ I Current Maximize $0 $1
+
+DestroyFunc BrowserCmd
+AddToFunc BrowserCmd
++ I Exec exec firefox
++ I Wait firefox
+#+ I ThisWindow Raise
+#+ I ThisWindow (AcceptsFocus) FlipFocus
++ I Current Maximize $0 $1
+
+DestroyFunc MailCmd
+AddToFunc MailCmd
++ I Exec exec thundrbird
++ I Wait thunderbird
+#+ I ThisWindow Raise
+#+ I ThisWindow (AcceptsFocus) FlipFocus
++ I Current Maximize $0 $1
+
+#***********************************************************************
+# 7.4.1 Common FvwmEvents
+#***********************************************************************
+DestroyModuleConfig FvwmEventCommon: *
+*FvwmEventCommon: deiconify    DeThumbnail
+
+#-----------------------------------------------------------------------
+# Iconify/deiconify all apps with the same resource
+#-----------------------------------------------------------------------
+DestroyFunc FuncIconifySameResource
+AddToFunc   FuncIconifySameResource
+#+ I All ($[w.resource]) Iconify $0
++ I All ($[w.resource]) Thumbnail
+
+# Function: ThumbnailClick
+#
+# This function is run from FvwmIconMan when the button is clicked.
+DestroyFunc FvwmThumbnailClick
+AddToFunc   FvwmThumbnailClick
++ I ThisWindow (Raised, !Shaded, !Iconic, CurrentPage) Thumbnail
++ I TestRc (Match) Break
++ I ThisWindow WindowShade off
++ I ThisWindow Iconify off
++ I ThisWindow Raise
++ I ThisWindow (AcceptsFocus) FlipFocus
+
+#-----------------------------------------------------------------------
+# replacement for iconify. Creates a small thumb with little app icon
+# on the upper right and the name of the app at the bottom
+#-----------------------------------------------------------------------
+DestroyFunc Thumbnail
+AddToFunc   Thumbnail
++ I Raise
++ I ThisWindow (!Iconic) PipeRead "echo SetEnv app_name `xprop -id $[w.id] WM_CLASS |cut -d',' -f2 |cut -d'\"' -f2`"
++ I PipeRead "echo SetEnv Icon-$[w.id] `fns-find-icon -i $[w.id]`"
++ I PipeRead 'test ! -d "${FVWM_USERDIR}/temp" && mkdir "${FVWM_USERDIR}/temp"'
++ I ThisWindow (!Shaded, Iconifiable, !Iconic) PipeRead \
+    "sleep 0.001; xwd -silent -id $[w.id] | convert -scale 106x60! -frame 1x1 \
+    -mattecolor black -quality 0 xwd:- png:$[FVWM_USERDIR]/temp/icon.tmp.$[w.id].png \
+    && echo WindowStyle IconOverride, Icon $[FVWM_USERDIR]/temp/icon.tmp.$[w.id].png \
+    || echo Nop"
++ I TestRc (Match) Test (f $[Icon-$[w.id]], f $[FVWM_USERDIR]/temp/icon.tmp.$[w.id].png) PipeRead \
+    "convert $[FVWM_USERDIR]/temp/icon.tmp.$[w.id].png \\\( $[Icon-$[w.id]] -scale 24x24 \\\) \
+    -gravity northeast -geometry +10+10 -compose multiply -composite \
+    -fill white -undercolor '#00000080' -gravity south -annotate +0+5 \" $[app_name] \" \
+    $[FVWM_USERDIR]/temp/icon.tmp.$[w.id].png; echo Nop"
++ I Iconify
+
+#-----------------------------------------------------------------------
+# replacement for deiconify.
+#-----------------------------------------------------------------------
+DestroyFunc DeThumbnail
+AddToFunc   DeThumbnail
++ I Test (i $[Icon-$[w.id]]) WindowStyle Icon $[Icon-$[w.id]]
++ I TestRc (NoMatch) WindowStyle NoIconOverride, Icon
++ I Exec rm -f $[FVWM_USERDIR]/temp/icon.tmp.$[w.id].png
++ I All (Iconic, CurrentPage) PlaceAgain icon
++ I PipeRead 'if [ -O $[Icon-$[w.id]] ]; then rm -f $[Icon-$[w.id]];fi'
++ I UnsetEnv Icon-$[w.id]
++ I UnsetEnv app_name
+
+# Move Window
+DestroyFunc MoveRight
+AddToFunc   MoveRight
++ I AnimatedMove w+20p keep
+
+DestroyFunc MoveLeft
+AddToFunc MoveLeft
++ I AnimatedMove w+-20p keep
+
+DestroyFunc MoveUp
+AddToFunc MoveUp
++ I AnimatedMove keep w+-20p
+
+DestroyFunc MoveDown
+AddToFunc MoveDown
++ I AnimatedMove keep w+20p
+
+DestroyFunc ShrinkEast
+AddToFunc ShrinkEast
++ I PipeRead "echo Resize $(($[cw.width] - 15))p keep"
+
+DestroyFunc GrowEast
+AddToFunc GrowEast
++ I PipeRead "echo Resize $(($[cw.width] + 15))p keep"
+
+DestroyFunc ShrinkSouth
+AddToFunc ShrinkSouth
++ I PipeRead "echo Resize keep $(($[cw.height] - 15))p"
+
+DestroyFunc GrowSouth
+AddToFunc GrowSouth
++ I PipeRead "echo Resize keep $(($[cw.height] + 15))p"
+
+# Alt-Tab Window Switching two methods ================================#
+
+DestroyFunc FuncFvwmNextWindow
+AddToFunc FuncFvwmNextWindow
++ I Next (CurrentPage, !Iconic, AcceptsFocus) FlipFocus NoWarp
++ I Current Raise
+
+DestroyFunc FuncFvwmPrevWindow
+AddToFunc FuncFvwmPrevWindow
++ I Prev (CurrentPage, !Iconic, AcceptsFocus) Focus NoWarp
++ I Current Raise
+
+DestroyFunc FvwmCenterWindow
+AddToFunc   FvwmCenterWindow
++ I ThisWindow Piperead "echo Move \
+    $(( $[vp.width]/2-$[w.width]/2 ))p \
+    $(( $[vp.height]/2-$[w.height]/2 ))p"
+
+DestroyFunc ResizeCenter
+AddToFunc ResizeCenter
++ I Resize $*
++ I ThisWindow WindowStyle CenterPlacement
++ I UpdateStyles
+
+##  Drag move window with motion + alt + lclick inside window|titlebar.
+DestroyFunc  ClickDragMove
+AddToFunc    ClickDragMove
++ I DebugEcho ClickDragMove
++ M ThisWindow (AcceptsFocus) Move
+
+#***********************************************************************
+# 7.5.1 RunCommand Window
+#***********************************************************************
+DestroyModuleConfig  FvwmForm-RunCommand: *
+*FvwmForm-RunCommand: WarpPointer
+# *FvwmForm-RunCommand: Font 8x13
+*FvwmForm-RunCommand: Font "xft:Noto Sans:regular:size=11:antialias=True:hintstyle=slight"
+*FvwmForm-RunCommand: Title         "$[gt.Run Command]"
+*FvwmForm-RunCommand: Line          center
+*FvwmForm-RunCommand: Text          "$[gt.Run Command]"
+*FvwmForm-RunCommand: Line          left
+*FvwmForm-RunCommand: Text          "$[gt.Command:]"
+*FvwmForm-RunCommand: Input         Command 30 ""
+*FvwmForm-RunCommand: Line          center
+*FvwmForm-RunCommand: Selection     cmd multiple
+*FvwmForm-RunCommand: Choice        TERM    TERM     off      "$[gt.Run in Terminal]"
+*FvwmForm-RunCommand: Line          expand
+*FvwmForm-RunCommand: Button        quit "$[gt.Execute]" ^M
+*FvwmForm-RunCommand: Command       $(TERM?exec xterm -hold -T "$(Command)" -n "$(Command)" -e $(Command))
+*FvwmForm-RunCommand: Command       exec $(Command)
+*FvwmForm-RunCommand: Button        quit "$[gt.Cancel]"
+*FvwmForm-RunCommand: Command       Nop
+
+# To force that all pending changes are applied immediately, use the
+# UpdateStyles, Refresh or RefreshWindow commands.
+
+# Function: Window Tiling
+#
+# This function tiles active windows with specified keybindings.
+DestroyFunc TileLeft
+AddToFunc TileLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+DestroyFunc TileRight
+AddToFunc TileRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+DestroyFunc TileTop
+AddToFunc TileTop
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+DestroyFunc TileBottom
+AddToFunc TileBottom
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+DestroyFunc TileTopLeft
+AddToFunc TileTopLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
+
+DestroyFunc TileTopRight
+AddToFunc TileTopRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
+
+DestroyFunc TileBottomLeft
+AddToFunc TileBottomLeft
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
+
+DestroyFunc TileBottomRight
+AddToFunc TileBottomRight
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
+
+# Take a screenshot using scrot
+DestroyFunc Scrot
+AddToFunc   Scrot
++ I Exec exec scrot '%Y-%m-%d-%s_$wx$h_scrot.png' -e 'mv $f $[HOME]/Screenshots'
+
+# Take a screenshot using scrot with a delay of 10 seconds
+DestroyFunc ScrotDelayed
+AddToFunc   ScrotDelayed
++ I Exec exec scrot -d 10 '%Y-%m-%d-%s_$wx$h_scrot.png' -e 'mv $f $[HOME]/Screenshots'
+
+# Take a screenshot using scrot and selecting an area
+DestroyFunc ScrotSelect
+AddToFunc ScrotSelect
++ I Exec exec scrot -s '%Y-%m-%d-%s_$wx$h_scrot.png' -e 'mv $f $[HOME]/Screenshots'
+
+DestroyFunc MoveToCurrent
+AddToFunc MoveToCurrent
++ I ThisWindow MoveToPage
++ I ThisWindow MoveToDesk

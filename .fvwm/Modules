@@ -1,0 +1,404 @@
+############
+# Modules - dfault configuration
+#############
+
+# FvwmBanner
+#
+# This displays the Fvwm Logo for 5 seconds. This is displayed
+# when fvwm starts.
+
+DestroyModuleConfig FvwmBanner:*
+*FvwmBanner: NoDecor
+*FvwmBanner: Timeout 5
+
+# FvwmForm
+#
+# FvwmForm is a module that can be used to build a GUI
+# form. Used with fvwm-menu-desktop-config.fpl.
+# This sets the default colorsets.
+*FvwmFormDefault: Colorset 18
+*FvwmFormDefault: ItemColorset 19
+
+##  The fvwm animate module.
+DestroyModuleConfig FvwmAnimate: *
+*FvwmAnimate: Effect Frame
+*FvwmAnimate: Iterations 100
+*FvwmAnimate: Width 5
+*FvwmAnimate: Twist 1
+*FvwmAnimate: Delay 4
+*FvwmAnimate: Color gray50
+
+##  The Fvwm identify-window module - an xwininfo replacement.
+
+Style FvwmIdent WindowListSkip
+DestroyModuleConfig FvwmIdent: *
+# *FvwmIdent: Font -*-terminus-bold-*-*--14-*-*-*-*-*-*-*
+*FvwmIdent: Font xft:Source Sans Pro:Medium:size=10:antialias=true:hintstyle=slight
+*FvwmIdent: Colorset 18
+
+# Select Iconify or Thumbnail
+
+#======FvwmIconBox specs [l t r b]===============#
+
+Style * StickyIcon
+Style * IconTitleFormat %i
+Style * IconTitleRelief 1
+Style * IconBackgroundRelief 1
+Style * IconBackgroundPadding 0
+Style * IconFont "Shadow=0 0 SE:xft:Source Sans Pro:Medium:size=10:antialias=True:hintstyle=slight"
+Style * IconBackgroundColorset 8
+Style * IconTitleColorset 8
+Style * HilightIconTitleColorset 8
+Style * IndexedWindowName
+Style * Icon unknown1.xpm
+
+# uncomment for icons
+# Style * IconSize 32 32 48 48, IconBox screen c 1 1 -1 -1, IconFill top left
+# Style * IconSize 48 48 48 48, IconBox screen c 1 1 -1 -1, IconFill top left
+Style * IconSize 56 56 56 56, IconBox screen c 1 1 -1 -1, IconFill top left
+# Style * IconSize 64 64 64 64, IconBox screen c 1 1 -1 -1, IconFill top left, IconFill top left
+
+# Position of IconBox
+
+# top left
+Style "*" IconSize 56 56 56 56, IconBox 8 8 512 640, IconGrid 24 24, IconFill top left
+
+# top center
+# Style "*" IconSize 56 56 56 56, IconBox 200 24 -1 -1, IconGrid 36 36, IconFill left top
+#
+# bottom center
+# Style "*" IconSize 56 56 56 56, IconBox 4 836 -1 -1, IconGrid 2 2, IconFill left top
+
+# top right
+# Style "*" IconSize 56 56 56 56, IconBox -80 24 -1 -1, IconGrid 36 36, IconFill top right
+
+# bottom left
+# Style "*" IconSize 56 56 56 56, IconBox 4 836 -1 -1, IconGrid 2 2, IconFill left top
+# Style "*" IconSize 56 56 56 56, IconBox 8 600 400 896, IconGrid 10 10, IconFill bottom left
+
+################################
+# thumbnails   #################
+################################
+
+# Style "*" Iconbox 8 835 1000 895, IconGrid 16 16, IconFill bottom left
+# Style "*" Iconbox 8 8 512 1024, IconGrid 12 12, IconFill left top
+
+# Disable Icons from appearing on desktop.
+# Comment this out or use Style * Icon to get the icons back.
+# Style * !Icon
+Style * !IconTitle
+
+# FvwmScript
+#
+# FvwmScript is a module that allows one to write custom desktop
+# widgets and various other tools. This config uses two FvwmScripts.
+#   - DateTime - uses the output of "date" to display the date/time
+#     on the RightPanel.
+#   - Quit - This is a popup that asks for quit confirmation before
+#     quitting fvwm.
+DestroyModuleConfig FvwmScript:*
+*FvwmScript: DefaultColorset 20
+
+################################################
+#
+# FvwmPager and FvwmIconMan
+#
+##################################################
+
+# Global Style for FvwmIconMan
+
+Style FvwmIconMan* !Title, BorderWidth 5, HandleWidth 5, Sticky, CirculateSkip, WindowListSkip, NeverFocus, StaysOnBottom, !Iconifiable
+
+# FvwmIconMan
+#
+# FvwmIconMan is a powerful tool to list and manage windows. This
+# is used as the window list in the panel or taskbar.
+DestroyModuleConfig FvwmIconMan:*
+*FvwmIconMan: Title              ""
+# *FvwmIconMan: TitleButton	   style for title button     raisededge black grey
+# *FvwmIconMan: TitleColorset
+# *FvwmIconMan: IconName	   manager icon name FvwmIconMan
+*FvwmIconMan: NumManagers        1
+*FvwmIconMan: ManagerGeometry    1x1
+# *FvwmIconMan: ManagerGeometry    0x1-0+0
+*FvwmIconMan: Resolution         global    # desk, page, global
+*FvwmIconMan: UseWinList         true
+# *FvwmIconMan: Show		   list of windows to show
+*FvwmIconMan: ShowOnlyIcons      false
+*FvwmIconMan: ShowNoIcons        false
+*FvwmIconMan: ShowTransient      false
+*IconManDesk: ShowOnlyFocused    false
+*FvwmIconMan: FollowFocus        true
+*FvwmIconMan: DontShow           Conky, XClock
+*FvwmIconMan: DrawIcons          false
+*FvwmIconMan: Shape              false
+*FvwmIconMan: Font               "Shadow=0 0 SE:xft:Source Sans Pro:Medium:size=11:antialias=True:hintstyle=slight"
+*FvwmIconMan: ButtonGeometry     156x28
+*FvwmIconMan: MaxButtonWidth     156
+# *FvwmIconMan: MaxButtonWidthByColumns  156
+*FvwmIconMan: Format             "%c: %i"
+*FvwmIconMan: Sort               id
+# *FvwmIconMan: SortWeight         weight for sorting
+*FvwmIconMan: NoIconAction       NOP
+*FvwmIconMan: Reverse            none
+*FvwmIconMan: ReliefThickness    1
+*FvwmIconMan: Tips               always
+*FvwmIconMan: TipsDelays         1000 300
+*FvwmIconMan: TipsFont           "Shadow=0 0 SE:xft:Source Sans Pro:Medium:size=10:antialias=True:hintstyle=slight"
+*FvwmIconMan: TipsColorset	   Colorset 0
+*FvwmIconMan: TipsFormat         "%c: %i"
+*FvwmIconMan: TipsBorderWidth    1
+*FvwmIconMan: TipsPlacement      updown
+*FvwmIconMan: TipsJustification  leftup
+*FvwmIconMan: TipsOffsets        3 2
+# *FvwmIconMan: Foreground	   default text color	      white
+# *FvwmIconMan: Background	   default background	      gray
+*FvwmIconMan: Colorset           10
+*FvwmIconMan: PlainButton        up
+*FvwmIconMan: PlainColorset      11
+*FvwmIconMan: IconButton         up
+*FvwmIconMan: IconColorset       11
+*FvwmIconMan: FocusButton        up
+*FvwmIconMan: FocusColorset      12
+*FvwmIconMan: SelectButton           up
+*FvwmIconMan: SelectColorset         13
+*FvwmIconMan: IconAndSelectButton    up
+*FvwmIconMan: IconAndSelectColorset  13
+*FvwmIconMan: FocusAndSelectButton   up
+*FvwmIconMan: FocusAndSelectColorset 13
+*FvwmIconMan: Action Mouse 0 A ret
+*FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
+# *FvwmIconMan: Action Mouse 1 A sendcommand FvwmThumbnailClick
+*FvwmIconMan: Action Mouse 2 A refresh
+# *FvwmIconMan: Action Mouse 3 A sendcommand "Module FvwmIdent FvwmIdent"
+*FvwmIconMan: Action Mouse 3 A sendcommand Close
+
+################################################
+# Standalone Desktop           #################
+################################################
+
+# FvwmIconMan
+#
+# FvwmIconMan is a powerful tool to list and manage windows. This
+# is used as the window list in the panel or taskbar.
+
+Style IconManDesk* !Title, BorderWidth 5, HandleWidth 5, Sticky, CirculateSkip, WindowListSkip, NeverFocus, StaysOnBottom, !Iconifiable
+
+DestroyModuleConfig IconManDesk:*
+*IconManDesk: Title              ""
+# *IconManDesk: TitleButton	   style for title button     raisededge black grey
+# *IconManDesk: TitleColorset
+# *IconManDesk: IconName	   manager icon name FvwmIconMan
+*IconManDesk: NumManagers        1
+*IconManDesk: ManagerGeometry    0x1+0-0  # grow horizontal from lower left corner, 1x0 grow vewrtical
+*IconManDesk: Resolution         global    # desk, page, global
+*IconManDesk: UseWinList         true
+# *IconManDesk: Show		   list of windows to show
+*IconManDesk: ShowOnlyIcons      false
+*IconManDesk: ShowNoIcons        false
+*IconManDesk: ShowTransient      false
+*IconManDesk: ShowOnlyFocused                  false
+*IconManDesk: FollowFocus        true
+*IconManDesk: DontShow           Conky, XClock
+*IconManDesk: DrawIcons          false
+*IconManDesk: Shape              false
+*IconManDesk: Font               "Shadow=0 0 SE:xft:Fira Mono:Medium:size=11:antialias=True:hintstyle=slight"
+*IconManDesk: ButtonGeometry     156x24
+*IconManDesk: MaxButtonWidth     156
+# *IconManDesk: MaxButtonWidthByColumns  156
+*IconManDesk: Format             "%c: %i"
+*IconManDesk: Sort               id
+# *IconManDesk: SortWeight         weight for sorting
+*IconManDesk: NoIconAction       NOP
+*IconManDesk: Reverse            none
+*IconManDesk: ReliefThickness    0
+*IconManDesk: Tips               always
+*IconManDesk: TipsDelays         1000 300
+*IconManDesk: TipsFont           "Shadow=0 0 SE:xft:DejaVu Sans Mono:Book:size=9:antialias=True:hintstyle=slight"
+*IconManDesk: TipsColorset	     Colorset 0
+*IconManDesk: TipsFormat         "%c: %i"
+*IconManDesk: TipsBorderWidth    1
+*IconManDesk: TipsPlacement      updown
+*IconManDesk: TipsJustification  leftup
+*IconManDesk: TipsOffsets        3 2
+# *IconManDesk: Foreground	   default text color	      white
+# *IconManDesk: Background	   default background	      gray
+*IconManDesk: Colorset           20
+*IconManDesk: PlainButton        up
+*IconManDesk: PlainColorset      11
+*IconManDesk: IconButton         up
+*IconManDesk: IconColorset       11
+*IconManDesk: FocusButton        up
+*IconManDesk: FocusColorset      12
+*IconManDesk: SelectButton           up
+*IconManDesk: SelectColorset         13
+*IconManDesk: IconAndSelectButton    up
+*IconManDesk: IconAndSelectColorset  13
+*IconManDesk: FocusAndSelectButton   up
+*IconManDesk: FocusAndSelectColorset 13
+*IconManDesk: Action Mouse 0 A ret
+*IconManDesk: Action Mouse 1 A sendcommand IconManClick
+*IconManDesk: Action Mouse 2 A refresh
+# *IconManDesk: Action Mouse 3 A sendcommand "Module FvwmIdent FvwmIdent"
+*IconManDesk: Action Mouse 3 A sendcommand Close
+
+Style IconManVert* !Title, BorderWidth 5, HandleWidth 5, Sticky, CirculateSkip, WindowListSkip, NeverFocus, StaysOnBottom, !Iconifiable
+
+DestroyModuleConfig IconManVert:*
+*IconManVert: Title              ""
+# *IconManVert: TitleButton	   style for title button     raisededge black grey
+# *IconManVert: TitleColorset
+# *IconManVert: IconName	   manager icon name FvwmIconMan
+*IconManVert: NumManagers        1
+*IconManVert: ManagerGeometry    1x0+4+200  # grow horizontal from lower left corner, 1x0 grow vewrtical
+# *IconManVert: ManagerGeometry    1x0+8+120  # grow horizontal from lower left corner, 1x0 grow vewrtical
+*IconManVert: Resolution         global    # desk, page, global
+*IconManVert: UseWinList         true
+# *IconManVert: Show		   list of windows to show
+*IconManVert: ShowOnlyIcons      false
+*IconManVert: ShowNoIcons        false
+*IconManVert: ShowTransient      false
+*IconManVert: ShowOnlyFocused                  false
+*IconManVert: FollowFocus        true
+*IconManVert: DontShow           Conky, XClock
+*IconManVert: DrawIcons          false
+*IconManVert: Shape              false
+*IconManVert: Font               "Shadow=0 0 SE:xft:Cantarell:Medium:size=11:antialias=True:hintstyle=slight"
+*IconManVert: ButtonGeometry     106x20
+*IconManVert: MaxButtonWidth     106
+# *IconManVert: MaxButtonWidthByColumns  156
+*IconManVert: Format             "%c: %i"
+*IconManVert: Sort               id
+# *IconManVert: SortWeight         weight for sorting
+*IconManVert: NoIconAction       NOP
+*IconManVert: Reverse            none
+*IconManVert: ReliefThickness    0
+*IconManVert: Tips               always
+*IconManVert: TipsDelays         1000 300
+*IconManVert: TipsFont           "Shadow=0 0 SE:xft:Source Sans Pro:Medium:size=9:antialias=True:hintstyle=slight"
+*IconManVert: TipsColorset	   Colorset 0
+*IconManVert: TipsFormat         "%c: %i"
+*IconManVert: TipsBorderWidth    1
+*IconManVert: TipsPlacement      updown
+*IconManVert: TipsJustification  leftup
+*IconManVert: TipsOffsets        3 2
+# *IconManVert: Foreground	   default text color	      white
+# *IconManVert: Background	   default background	      gray
+*IconManVert: Colorset           10
+*IconManVert: PlainButton        up
+*IconManVert: PlainColorset      11
+*IconManVert: IconButton         up
+*IconManVert: IconColorset       11
+*IconManVert: FocusButton        up
+*IconManVert: FocusColorset      12
+*IconManVert: SelectButton           up
+*IconManVert: SelectColorset         13
+*IconManVert: IconAndSelectButton    up
+*IconManVert: IconAndSelectColorset  13
+*IconManVert: FocusAndSelectButton   up
+*IconManVert: FocusAndSelectColorset 13
+*IconManVert: Action Mouse 0 A ret
+*IconManVert: Action Mouse 1 A sendcommand IconManClick
+*IconManVert: Action Mouse 2 A refresh
+# *IconManVert: Action Mouse 3 A sendcommand "Module FvwmIdent FvwmIdent"
+*IconManVert: Action Mouse 3 A sendcommand Close
+
+# FvwmIconBar
+#
+# FvwmIconBar is a powerful tool to list and manage windows. This
+# is used as the window list in the panel or taskbar.
+
+Style FvwmIconBar* !Title, !Borders, !Handles, Sticky, CirculateSkip, WindowListSkip, NeverFocus, StaysOnBottom, !Iconifiable
+
+DestroyModuleConfig FvwmIconBar:*
+*FvwmIconBar: Title              ""
+# *FvwmIconBar: TitleButton	   style for title button     raisededge black grey
+# *FvwmIconBar: TitleColorset
+# *FvwmIconBar: IconName	   manager icon name FvwmIconBar
+*FvwmIconBar: NumManagers        1
+*FvwmIconBar: ManagerGeometry    1x1
+*FvwmIconBar: Resolution         global    # desk, page, global
+*FvwmIconBar: UseWinList         true
+# *FvwmIconBar: Show		   list of windows to show
+*FvwmIconBar: ShowOnlyIcons      false
+*FvwmIconBar: ShowNoIcons        false
+*FvwmIconBar: ShowTransient      false
+*IconManDesk: ShowOnlyFocused    false
+*FvwmIconBar: FollowFocus        true
+*FvwmIconBar: DontShow           Conky, XClock
+*FvwmIconBar: DrawIcons          false
+*FvwmIconBar: Shape              false
+*FvwmIconBar: Font               "Shadow=0 0 SE:xft:Fira Sans:Medium:size=11:antialias=True:hintstyle=slight"
+*FvwmIconBar: ButtonGeometry     156x30
+*FvwmIconBar: MaxButtonWidth     156
+*FvwmIconBar: Format             "%c: %i"
+*FvwmIconBar: Sort               id
+*FvwmIconBar: NoIconAction       NOP
+*FvwmIconBar: Reverse            none
+*FvwmIconBar: ReliefThickness    0
+*FvwmIconBar: Tips               always
+*FvwmIconBar: TipsDelays         1000 300
+*FvwmIconBar: TipsFont           "Shadow=0 0 SE:xft:Source Sans Pro:Medium:size=10:antialias=True:hintstyle=slight"
+*FvwmIconBar: TipsColorset	     Colorset 0
+*FvwmIconBar: TipsFormat         "%c: %i"
+*FvwmIconBar: TipsBorderWidth    1
+*FvwmIconBar: TipsPlacement      updown
+*FvwmIconBar: TipsJustification  leftup
+*FvwmIconBar: TipsOffsets        3 2
+*FvwmIconBar: Colorset           14
+*FvwmIconBar: PlainButton        up
+*FvwmIconBar: PlainColorset      15
+*FvwmIconBar: IconButton         up
+*FvwmIconBar: IconColorset       15
+*FvwmIconBar: FocusButton        up
+*FvwmIconBar: FocusColorset      16
+*FvwmIconBar: SelectButton           up
+*FvwmIconBar: SelectColorset         17
+*FvwmIconBar: IconAndSelectButton    up
+*FvwmIconBar: IconAndSelectColorset  17
+*FvwmIconBar: FocusAndSelectButton   up
+*FvwmIconBar: FocusAndSelectColorset 17
+*FvwmIconBar: Action Mouse 0 A ret
+*FvwmIconBar: Action Mouse 1 A sendcommand IconManClick
+*FvwmIconBar: Action Mouse 2 A refresh
+*FvwmIconBar: Action Mouse 3 A sendcommand Close
+
+# FvwmPager
+#
+# This module displays the location of the windows on the various Pages
+# and Desks. This is setup to show only the Pages on the current Desk.
+
+Style FvwmPager* !Title, BorderWidth 5, HandleWidth 5, Sticky, CirculateSkip, WindowListSkip, NeverFocus, StaysOnBottom, !Iconifiable
+
+# FvwmPager
+#
+# This module displays the location of the windows on the various Pages
+# and Desks. This is setup to show only the Pages on the current Desk.
+DestroyModuleConfig FvwmPager:*
+*FvwmPager: Geometry +4+4
+*FvwmPager: DeskTopScale 32
+*FvwmPager: Rows 1
+*FvwmPager: Columns 2
+*FvwmPager: Colorset * 20
+*FvwmPager: HilightColorset * 21
+*FvwmPager: WindowColorsets 22 23
+*FvwmPager: NoStartIconic
+*FvwmPager: NoMiniIcons
+*FvwmPager: UseSkipList
+*FvwmPager: WindowLabelFormat %i
+*FvwmPager: Balloons null
+*FvwmPager: BalloonStringFormat %i
+*FvwmPager: BalloonFore #F7F7F7
+*FvwmPager: BalloonBack #222948
+*FvwmPager: BalloonFont "xft:Fira Mono:Regular:size=9:antialias=True:hintstyle=slight"
+*FvwmPager: BalloonBorderWidth 1
+*FvwmPager: BalloonBorderColor #151515
+*FvwmPager: BalloonYOffset +5
+*FvwmPager: WindowMinSize 3
+*FvwmPager: WindowBorderWidth 1
+*FvwmPager: NoShapeLabels
+*FvwmPager: LabelsAbove
+*FvwmPager: Font "xft:Fira Mono:Regular:size=10:antialias=True:hintstyle=slight"
+# Font None to remove desktop labels
+# *FvwmPager: Font None
+# *FvwmPager: SmallFont none

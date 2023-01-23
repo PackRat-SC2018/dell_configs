@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# background and wallpaper
+xsetroot -solid black &
+feh --no-fehbg --bg-scale --no-xinerama --randomize $HOME/wallpaper/* &
+
+# (re)load xclock
+#if hash xclock >/dev/null 2>&1; then
+#	pkill xclock
+#	xclock -geom -4+4 &
+#fi
+
+# Conky
+# (re)load stalonetray
+#if hash conky >/dev/null 2>&1; then
+#	pkill conky
+#	conky -p3 -d -c $HOME/conky/conkyfvwmrc &
+#fi
+
+# stalonetray
+#killall -q stalonetray
+#while pgrep -u $UID -x stalonetray >/dev/null; do sleep 1; done
+#sleep 2; stalonetray -c $HOME/.fvwm/fvwmtrayrc &
+
+# (re)load stalonetray
+#if hash stalonetray >/dev/null 2>&1; then
+#	pkill stalonetray
+#	stalonetray -c $HOME/.fvwm/fvwmtrayrc &
+#fi
+
+# tint2
+# (re)load tint2
+if hash tint2 >/dev/null 2>&1; then
+	pkill tint2
+	tint2 &
+fi
+
+exit 0;
+

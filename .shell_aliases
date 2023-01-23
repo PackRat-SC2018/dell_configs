@@ -1,0 +1,143 @@
+# shell aliases
+alias ll='ls -lh -F --group-directories-first'
+alias la='ls -A --group-directories-first'
+alias ls='ls -hNCF --color --group-directories-first'
+alias rm='rm -vi'
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias dfh='df -hT'
+alias dfk='df -kT'
+alias du='du -h'
+alias duh='du -hca'
+alias ducks='du -cks -- * | sort -rn | head'
+alias ip='ip -color'
+alias path='echo -e ${PATH//:/\\n}'
+alias emacs='emacs -nw'
+alias joe='joe --wordwrap'
+alias listusb='ls -l /dev/disk/by-id/*usb*'
+alias sinfo='inxi -CSI -tcm5 -W 29803 --no-host'
+alias screenfetch='screenfetch -n'
+alias shotdate='date +%A_%s'
+alias sshot='import -window root -quality 100 ~/pictures/screen-import-$(shotdate).png'
+alias mshot='maim -u -d 5 -i root ~/pictures/maim_shot-$(date +%F_%s).png'
+alias scrotpng='scrot -q 100 -c -d 5 ~/pictures/scrot-shot-%B_%e_%s.png'
+alias scrotjpg='scrot -q 100 -c -d 5 ~/pictures/scrot-shot-%a_%e_%s.jpg'
+alias maimpng='maim -u -d 5 -i root ~/Pictures/maim-shot-$(shotdate).png'
+alias maimjpg='maim -u -d 5 -i root ~/Pictures/maim-shot-$(shotdate).jpg'
+alias maim-hdmi='maim -u -d 5 -g 1920x1080+0+0 ~/images/hdmi-shot-$(date +%s).png'
+alias maim-vga='maim -u -d 5 -g 1920x1080+1920+0 ~/images/vga-shot-$(date +%s).png'
+alias maim-clip='maim | tee ~/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png'
+alias kconky='killall -SIGUSR1 conky'
+alias ktint2='killall -SIGUSR1 tint2'
+alias kpolybar='killall -SIGUSR1 polybar'
+alias ufont='fc-cache -f -v'
+alias rufont='sudo fc-cache -f -v'
+alias prmount='sudo mount -o rw,umask=000,noexec'
+alias prumount='sudo umount'
+alias usbmnt='sudo mount -o rw,umask=000 /dev/sdc1 /media/usbhd'
+alias win10mnt='sudo mount -o rw,umask=000 /dev/sda6 /mnt/windows'
+alias takeshot='neofetch ; scrotpng'
+alias neoinfo='neofetch --backend off --color_blocks off'
+alias playdvd='mpv dvd:// --alang=en'
+alias snapshot='ffmpeg -f video4linux2 -i /dev/video0 -vframes 1 snapshot-001.png'
+# man page width using fmt
+# man mpv | fmt -w 140 | less
+# find . -name '*~' -delete
+
+alias tpadon='xinput enable 12'
+alias tpadoff='xinput disable 12'
+
+alias emacsfind="find . -name '*~'"
+alias emacsdel="find . -name '*~' -delete"
+
+# alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
+# alias getmp3='youtube-dl -x  --no-mtime --audio-format mp3 -o /mnt/public/downloads/'
+#alias ytmp3='youtube-dl --add-metadata --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail --prefer-ffmpeg --youtube-skip-dash-manifest --ignore-errors --restrict-filenames --verbose $f'
+
+alias wget='wget -c'
+alias picom='picom -b'
+alias picom-dwm='picom --config ~/.config/picom.dwm'
+alias compton='compton -cCGf'
+alias obxprop='obxprop | grep "^_OB_APP"'
+alias update-void='sudo xbps-install -Suv'
+alias update-arch='sudo pacman -Suyy'
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'
+alias power-off='loginctl poweroff'
+alias re-boot='loginctl reboot'
+
+alias doy="date '+%j'"
+alias ydoy="date '+%j%y'"
+alias yydoy="date '+%j%Y'"
+alias vdt="date '+%V'"
+alias dt="date '+%D %R'"
+alias dt0="date '+%D'"
+alias isodate="date '+%G-%m-%d'"
+alias isodt="date '+%G-%m-%d %H:%M'"
+alias isodts="date '+%G-%m-%d %H:%M:%S'"
+
+alias d="ls -1p | sed -n '/\/$/s/^/    /p;'"
+alias dl="ls -lhp | grep '^d'"
+alias DL="ls -lthp -T80 | grep '^d'"
+
+alias x='ls -xaF'
+alias r='ls -1RF'
+alias rr='ls -lRF'  
+alias R='BLOCKSIZE=1m ls -s1R'
+alias lm='BLOCKSIZE=1m ls -sF'
+alias lmm='BLOCKSIZE=1m ls -1sSF'
+
+##### Z=bytes
+alias dirs="ls -1Ap | grep '/$' | column"
+alias files="ls -1AF | sed  '/[@/]$/d;s/\*$//' |column" 
+alias files1="ls -1AF | sed  '/[@/]$/d;s/\*$//'"
+alias syms="ls -1AF | grep '@$'"
+alias aux='ps aux'
+alias vax='ps vax'
+alias jax='ps jax'
+alias lax='ps lax'
+alias axl='ps axl'
+alias ax='ps ax'
+alias cax='ps cax'
+alias caxl='ps caxl'
+alias 1ping='ping -qc 1 -t 2'
+
+# winow managers
+alias i3-session='exec startx $HOME/.xinitrc i3'
+alias fluxbox-session='exec startx $HOME/.xinitrc fluxbox'
+alias fvwm-session='exec startx $HOME/.xinitrc fvwm3'
+alias dwm-session='exec startx $HOME/.xinitrc dwm'
+alias bspwm-session='exec startx $HOME/.xinitrc bspwm'
+alias dk-session='exec startx $HOME/.xinitrc dk'
+alias obx-session='exec startx $HOME/.xinitrc openbox'
+alias spectrwm-session='exec startx $HOME/.xinitrc spectrwm'
+alias awesome-session='exec startx $HOME/.xinitrc awesome'
+alias hikari-session='dbus-run-session hikari'
+alias sway-session='dbus-run-session sway'
+alias xfce4-start='exec startx $HOME/.xinitrc xfce4'
+alias gnome-start='exec startx $HOME/.xinitrc gnome'
+alias mate-start='exec startx $HOME/.xinitrc mate'
+#
+#
+# free -h | awk 'NR==2{printf "%s/%s",$3,$2}'; free -m |awk 'NR==2{printf "  (%u%%)\n",$3*100/$2 }'
+#
+# alias setwall="feh --no-fehbg --bg-scale --no-xinerama --randomize /mnt/public/images/dual_monitor/*"
+
+alias forecast='curl http://wttr.in'
+
+# remote logins
+alias mntpublic='sshfs -p 4156 doug@BANDIT:/mnt/public /home/doug/Bandit/public'
+alias mntpublicip='sshfs -p 4156 doug@192.168.0.11:/mnt/public /home/doug/Bandit/public'
+alias umntpublic='fusermount -u /home/doug/Bandit/public'
+alias mntdata='sshfs -p 4156 doug@BANDIT:/mnt/data /home/doug/Bandit/data'
+alias mntdataip='sshfs -p 4156 doug@192.168.0.11:/mnt/data /home/doug/Bandit/data'
+alias umntdata='fusermount -u /home/doug/Bandit/data'
+
+alias nfs-public='sudo mount -t nfs4 BANDIT:/mnt/public ~/Bandit/public'
+alias nfs-data='sudo mount -t nfs4 BANDIT:/mnt/data ~/Bandit/data'
+
+# text-based grub
+# sudo sed -i -e 's/#GRUB_TERMINAL/GRUB_TERMINAL/g' /etc/default/grub
+
+# list packages without version
+# alias list-packages="xbps-query -l | awk '{ print $2 }' | xargs -n1 xbps-uhelper getpkgname"

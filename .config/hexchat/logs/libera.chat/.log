@@ -1,0 +1,22 @@
+**** BEGIN LOGGING AT Sun Jan  1 20:14:27 2023
+
+Jan 01 20:14:27 *	Connecting to irc.libera.chat (130.185.232.126:6697)
+Jan 01 20:14:28 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jan 01 20:14:28 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jan 01 20:14:28 *	* Subject: /C=US/O=Let's Encrypt/CN=R3
+Jan 01 20:14:28 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jan 01 20:14:28 *	* Subject: /CN=copper.libera.chat
+Jan 01 20:14:28 *	* Issuer: /C=US/O=Let's Encrypt/CN=R3
+Jan 01 20:14:28 *	* Certification info:
+Jan 01 20:14:28 *	  Subject:
+Jan 01 20:14:28 *	    CN=copper.libera.chat
+Jan 01 20:14:28 *	  Issuer:
+Jan 01 20:14:28 *	    C=US
+Jan 01 20:14:28 *	    O=Let's Encrypt
+Jan 01 20:14:28 *	    CN=R3
+Jan 01 20:14:28 *	  Public key algorithm: id-ecPublicKey (384 bits)
+Jan 01 20:14:28 *	  Sign algorithm sha256WithRSAEncryption
+Jan 01 20:14:28 *	  Valid since Nov  2 19:43:42 2022 GM to Jan 31 19:43:41 2023 GM
+Jan 01 20:14:28 *	* Cipher info:
+Jan 01 20:14:28 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jan 01 20:14:28 *	Connected. Now logging in.

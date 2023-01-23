@@ -1,0 +1,78 @@
+#######
+# Colorsets
+#
+# Colorsets can be used to configure the color of the various
+# parts of fvwm such as window decor, menus, modules, etc.
+#
+#
+###########
+
+CleanupColorsets
+
+Colorset 0  fg #0F0F0F, bg #DFDFDF, hi #F0F0F0, sh #B0B0B0, Plain, NoShape
+Colorset 1  fg #DFDFDF, bg #0F0F0F, hi #2F2F2F, sh #000000, Plain, NoShape
+Colorset 2  fg #171717, bg #CCCCCC, hi #ECECEC, sh #8C8C8C, Plain, NoShape
+
+# Menu
+Colorset 3  fg #030303, bg #bbc4cd, hi, sh, Plain, NoShape
+Colorset 4  fg #030303, bg #9C9C9C, hi #BBBBBB, sh #777777, Plain, NoShape
+Colorset 5  fg #E6E6E6, bg #5C5C5C, hi #ADB2B8, sh #606366, Plain, NoShape
+Colorset 6  fg #010101, bg #999999, hi, sh, Plain, NoShape
+
+# Icon Box
+Colorset 7 fg #0F0F0F, bg #CCC7C2, hi #EFEFEF, sh #9F9F9F, Plain, NoShape, RootTransparent, Buffer, Tint #CCC7C2 90
+Colorset 8 fg #E6E6E6, bg #1d1f21, hi #373b41, sh #282a2e, Plain, NoShape, RootTransparent, Buffer, Tint #1d1f21 66
+
+# FvwmScript
+Colorset 9 fg #121414, bg #C4C3BD, hi #A9A9A9, sh #989898, Plain, NoShape
+
+# FvwmIconMan FvwmTaskBar
+Colorset 10 fg #010101, bg #999999, hi #BBBBBB, sh #666666, Plain, NoShape, RootTransparent, Buffer, Tint #CCC7C2 10
+Colorset 11 fg #141414, bg #999999, hi #BBBBBB, sh #666666, Plain, NoShape
+Colorset 12 fg #E6E6E6, bg #2D4966, hi #3E658F, sh #1B2B3D, Plain, NoShape
+Colorset 13 fg #E6E6E6, bg #3D6A99, hi #477CB3, sh #2E4F73, Plain, NoShape
+Colorset 14 fg #141414, bg #CCC7C2, hi #DFDFDF, sh #9F9F9F, Plain, NoShape, RootTransparent, Buffer, Tint #CCC7C2 90
+Colorset 15 fg #141414, bg #AFAFC2, hi #3F4142, sh #0F0F0F, Plain, NoShape
+Colorset 16 fg #E6E6E6, bg #2D4966, hi #3E658F, sh #1B2B3D, Plain, NoShape
+Colorset 17 fg #E6E6E6, bg #3D6A99, hi #3E658F, sh #1B2B3D, Plain, NoShape
+
+# FvwmScript, FvwmForm, FvwmIdent
+Colorset 18 fg #FFFFFF, bg #3D4669, hi #292929, sh #000000, Palin, NoShape
+Colorset 19 fg #1C1C1C, bg #A6A197, hi #BBBBBB, sh #4E4E4E, Palin, NoShape
+
+# Transparent FvwmPager
+Colorset 20 fg #141414, bg #CCC7C2, hi #FFFFFF, sh #DDDDDD, Plain, NoShape, RootTransparent, Buffer, Tint #CCC7C2 75
+Colorset 21 fg #E6E6E6, bg #5C5C5C, hi #505050, sh #0F0F0F, Plain, NoShape, RootTransparent, Buffer, Tint #5C5C5C 75
+Colorset 22 fg #E6E6E6, bg #6E6E7A, hi #3F4142, sh #0F0F0F, Plain, NoShape
+Colorset 23 fg #E6E6E6, bg #AFAFC2, hi #3F4142, sh #0F0F0F, Plain, NoShape
+
+# Desk Change FvwmButtons Module
+Colorset 24 fg #636363, bg #292A2B, hi #313131, sh #111111, Plain, NoShape
+Colorset 25 fg #E6E6E6, bg #292A2B, hi #3F4142, sh #0F0F0F, Plain, NoShape
+Colorset 26 fg #E6E6E6, bg #2D4966, hi #3E658F, sh #1B2B3D, Plain, NoShape
+
+# Art-Deco theme default fvwm3 (Blue)
+Colorset 27  fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape
+Colorset 28  fg #000000, bg #88b2b1, hi, sh, Plain, NoShape
+Colorset 29  fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape
+Colorset 30  fg black, bg #415554, hi, sh, Plain, NoShape
+Colorset 31  fg black, bg #14252c, hi #24424f, sh #111f26, Plain, NoShape
+Colorset 32  fg #000000, bg #cbdcca, hi, sh, Plain, NoShape
+Colorset 33  fg #ffffff, bg #88b2b1, hi, sh, Plain, NoShape
+
+# Colorsets 34 35 for window decors
+
+# FvwmIconBar
+Colorset 36 fg #212126, bg #212126, hi #3F3F3F, sh #121212, Plain, NoShape
+Colorset 37 fg #E6E6E6, bg #212126, hi #3F3F3F, sh #121212, Plain, NoShape
+Colorset 38 fg #E6E6E6, bg #444444, hi #3F3F3F, sh #121212, Plain, NoShape
+Colorset 39 fg #E6E6E6, bg #2D4966, hi #3F3F3F, sh #121212, Plain, NoShape
+
+# Art-Deco theme default fvwm3 (Blue)
+Colorset 40  fg #999999, bg #cbdcca, hi, sh, Plain, NoShape
+Colorset 41  fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape
+Colorset 42 fg #ffffff, bg #2b4e5e, hi #aaaaaa, sh #999999, Plain, NoShape
+Colorset 43 fg #ffffff, bg #1a6e99, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 44 fg #2d2d2d, bg #ffffff, hi, sh, Plain, NoShape
+Colorset 45 fg #ffffff, bg #006c6c, hi, sh, Plain, NoShape
+Colorset 46 fg #a8988f, bg #2b4e5e, hi #aaaaaa, sh #999999, Plain, NoShape

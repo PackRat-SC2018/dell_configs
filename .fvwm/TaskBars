@@ -1,0 +1,19 @@
+Style FvwmTaskBar !Title, !Borders, !Handles, Sticky, CirculateSkip, WindowListSkip, NeverFocus, StaysOnTop
+
+DestroyModuleConfig FvwmTaskBar:*
+*FvwmTaskBar: Geometry $[vp.width]x28+0-0
+# *FvwmTaskBar: Geometry 1598x30+0-0
+*FvwmTaskBar: Font "xft:Fira Sans:Regular:size=11:antialias=True:hintstyle=slight"
+*FvwmTaskBar: Colorset 14
+*FvwmTaskBar: Rows 1
+*FvwmTaskBar: Columns $[vp.width]
+*FvwmTaskBar: Frame 0
+*FvwmTaskBar: Padding 0 0
+*FvwmTaskBar: (40x1, Title "", Icon "ninja-cat-small.png", Action `Exec jgmenu --config-file="$HOME/.config/jgmenu/jgfvwmrc"`, Frame 1)
+*FvwmTaskBar: (1440x1, Top, Swallow FvwmIconBar 'Module FvwmIconMan FvwmIconBar', Frame 1)
+*FvwmTaskBar: (120x1, Swallow(NoClose,UseOld) stalonetray 'Exec exec stalonetray --config "$[FVWM_DATADIR]/default-config/.stalonetrayrc"', Frame 1)
+# *FvwmTaskBar: (160x1, Swallow FvwmPager 'Module FvwmPager 0 3', Frame 1)
+# *FvwmTaskBar: (112x1, Swallow FvwmScript-Clock 'Module FvwmScript $[FVWM_USERDIR]/FvwmScript-Clock', Frame 1)
+## xclock
+# *FvwmTaskBar: (80x1), Swallow(NoClose,UseOld) xclock `Exec exec xclock -digital -brief -fg "#010101" -bg "#999999" -strftime ' %k:%M ' \
+-face "xft:Fira Code:style=Retina:size=11:antialias=True:hintstyle=slight" -padding 7`, Frame 1, Padding 14 0)

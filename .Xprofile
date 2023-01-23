@@ -1,0 +1,63 @@
+# .Xprofile created 10-30-2019
+# sourced by .xinitrc
+# common items to start with window manager
+
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# true color in mc
+export TERM=xterm-256color
+export COLORTERM=truecolor
+
+# Qt5 configuration; Qt apps follow gtk2
+export QT_STYLE_OVERRIDE=GTK+
+export QT_QPA_PLATFORMTHEME=gtk2
+export QT_PLATFORMTHEME=gtk2
+export QT_PLATFORM_PLUGIN=gtk2
+
+# turn on numblock/numberpad by default
+numlockx on &
+
+# screen blanking
+# examples from void wiki
+#xset s off 	#Disable screen saver blanking
+#xset s 3600 3600 	#Change blank time to 1 hour
+#xset -dpms 	#Turn off DPMS
+#xset s off -dpms 	#Disable DPMS and prevent screen from blanking
+#xset dpms force off 	#Turn off screen immediately
+#xset dpms force standby 	#Standby screen
+#xset dpms force suspend 	#Suspend screen 
+#
+
+# bell volume
+xset b 50
+
+# blank screen after an hour
+xset s 3600 3600 &
+
+# dpms - seconds to standby/suspend/off
+# xset -dpms
+xset dpms 5400 6300 7200
+
+# turn off touchpad
+xinput disable 12 &
+
+# mouse acceleration
+xset m 1/1
+
+# keyboard autorepeat
+xset r rate 350 60
+
+# start mate policy kit agent (password authentication)
+# /usr/libexec/polkit-mate-authentication-agent-1 &
+
+# (re)load mate-power-manager
+if hash mate-power-manager >/dev/null 2>&1; then
+	pkill mate-power-manager
+	mate-power-manager &
+fi
+
+# (re)load nm-applet
+#if hash nm-applet >/dev/null 2>&1; then
+#	pkill nm-applet
+#	nm-applet &
+#fi

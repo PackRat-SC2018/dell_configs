@@ -1,0 +1,758 @@
+{
+	"file_history":
+	[
+		"/mnt/public/build/cdw-0.8.1/INSTALL",
+		"/home/doug/bin/media2T-backup.sh",
+		"/home/doug/bin/media64-backup.sh",
+		"/home/doug/bin/media16G-backup.sh",
+		"/home/doug/bin/media4G-backup.sh",
+		"/home/doug/.Xresources",
+		"/home/doug/.config/kitty/kitty.conf",
+		"/home/doug/.config/alacritty/alacritty.yml",
+		"/usr/local/bin/cpu_temp.pl",
+		"/home/doug/.config/polybar/modules.temp",
+		"/home/doug/conky/conkyhorizrc",
+		"/home/doug/.config/gtk-3.0/settings.ini",
+		"/home/doug/.fluxbox/styles/tiwanaku/theme.cfg",
+		"/home/doug/.fluxbox/styles/Template/theme.cfg",
+		"/home/doug/.fvwm/Colorsets",
+		"/home/doug/.fvwm/Menus",
+		"/home/doug/.config/jgmenu/jgmenui3rc",
+		"/home/doug/.config/jgmenu/jgmenudwmrc",
+		"/home/doug/.config/jgmenu/jgmenudkrc",
+		"/home/doug/.fluxbox/apps",
+		"/home/doug/.config/dk/sxhkdrc",
+		"/mnt/public/build/void-mklive/void-desktop-build.sh",
+		"/mnt/public/build/void-mklive/void-laptop-build.sh",
+		"/mnt/public/build/void-mklive/void-emacs-build.sh",
+		"/mnt/public/build/void-mklive/void-fluxbox-build.sh",
+		"/mnt/public/build/void-mklive/void-openbox-build.sh",
+		"/mnt/public/build/void-mklive/void-minimal-build.sh",
+		"/home/doug/.config/tint2/tint2rc",
+		"/home/doug/.config/jgmenu/jgfvwmrc",
+		"/home/doug/.config/jgmenu/jgmenurc",
+		"/home/doug/.fvwm/config",
+		"/home/doug/.config/jgmenu/jgmouserc",
+		"/run/media/doug/SDHC-64GB/Backups/VALKYRIE.2023-01-02_1672687021/.config/dk/dkrc",
+		"/mnt/public/build/dwm/config.def.h",
+		"/home/doug/.fluxbox/styles/maya/theme.cfg",
+		"/home/doug/.fluxbox/styles/aztec/theme.cfg",
+		"/home/doug/.config/i3/config",
+		"/home/doug/.fluxbox/keys",
+		"/home/doug/.fvwm/Bindings",
+		"/home/doug/.fvwm/Functions",
+		"/home/doug/.shell_aliases",
+		"/home/doug/.fluxbox/startup",
+		"/home/doug/.bashrc",
+		"/etc/sudoers.tmp",
+		"/home/doug/.config/dk/dkrc",
+		"/home/doug/.fvwm/Modules",
+		"/home/doug/.config/jgmenu/prepend.csv",
+		"/home/doug/temp/nvme_temp.pl",
+		"/mnt/public/build/dwm/config.h",
+		"/mnt/public/build/st/config.h",
+		"/mnt/public/build/st/hybrid.txt",
+		"/mnt/public/build/st/config.def.h",
+		"/home/doug/conky/conkytaorc",
+		"/home/doug/conky/conkytao10rc",
+		"/home/doug/.config/polybar/config.ini",
+		"/home/doug/.config/polybar/master.conf",
+		"/home/doug/bin/sysinfo-applet.sh",
+		"/home/doug/bin/ConkyDesktop.sh",
+		"/home/doug/bin/fluxbox-bar.sh",
+		"/home/doug/bin/dkwm-bar.sh",
+		"/home/doug/.fluxbox/styles/roswell/theme.cfg",
+		"/home/doug/.config/i3/autostart",
+		"/home/doug/.fvwm/autostart",
+		"/home/doug/.xinitrc",
+		"/home/doug/conky/conkysysinforc",
+		"/home/doug/conky/conkyhinforc",
+		"/home/doug/conky/conkyvertrc",
+		"/home/doug/conky/conkyfluxboxrc",
+		"/home/doug/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+		"/home/doug/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/doug/bin/ConkyTao.sh",
+		"/home/doug/.conkyrc",
+		"/home/doug/.Xprofile",
+		"/run/media/doug/SDHC-16G-01/backups/WILLOW.2022-10-15_1665886982/.xprofile",
+		"/run/media/doug/TOSHIBA-2TB/Backups/ZOE.2022-12-19_1671475794/.Xprofile",
+		"/home/doug/.config/mc/mc.ext",
+		"/home/doug/bin/local-backup.sh",
+		"/usr/share/themes/Redmond/gtk-2.0/gtkrc",
+		"/home/doug/.local/share/themes/Columbia/gtk-2.0/gtkrc",
+		"/home/doug/.config/polybar/modules.conf",
+		"/home/doug/.config/jgmenu/jgmenuboxrc",
+		"/home/doug/.config/polybar/jgmenubarrc",
+		"/home/doug/Documents/Vivaldi Passwords.csv",
+		"/home/doug/.config/jgmenu/append.csv",
+		"/home/doug/.config/polybar/modules.temp.toshiba",
+		"/mnt/public/build/slstatus/config.def.h",
+		"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/local-backup.sh",
+		"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media2T-backup.sh",
+		"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media4G-backup.sh",
+		"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media16G-backup.sh",
+		"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media64-backup.sh",
+		"/mnt/public/build/void-mklive/dracut/vmklive/adduser.sh",
+		"/mnt/public/build/slstatus/config.h",
+		"/etc/rc.conf",
+		"/home/doug/.config/jgmenu/jgmendkrc",
+		"/home/doug/.config/neofetch/config.conf",
+		"/home/doug/.fluxbox/init",
+		"/run/media/doug/SDHC-64GB/Backups/ZOE.2022-12-25_1672002788/.fluxbox/apps",
+		"/home/doug/.fluxbox/menu",
+		"/run/media/doug/SDHC-64GB/Backups/ZOE.2022-12-25_1672002788/.xinitrc",
+		"/home/doug/.Xmodmap"
+	],
+	"folder_history":
+	[
+	],
+	"last_version": 4143,
+	"last_window_id": 3,
+	"log_indexing": false,
+	"next_update_check": 1674569167,
+	"settings":
+	{
+		"new_window_full_screen": false,
+		"new_window_height": 1034.0,
+		"new_window_maximized": false,
+		"new_window_position":
+		[
+			0.0,
+			77.0
+		],
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 130.0,
+				"history":
+				[
+					"ls"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/mnt/public/build/cdw-0.8.1/INSTALL",
+				"/home/doug/bin/media2T-backup.sh",
+				"/home/doug/bin/media64-backup.sh",
+				"/home/doug/bin/media16G-backup.sh",
+				"/home/doug/bin/media4G-backup.sh",
+				"/home/doug/.Xresources",
+				"/home/doug/.config/kitty/kitty.conf",
+				"/home/doug/.config/alacritty/alacritty.yml",
+				"/usr/local/bin/cpu_temp.pl",
+				"/home/doug/.config/polybar/modules.temp",
+				"/home/doug/conky/conkyhorizrc",
+				"/home/doug/.config/gtk-3.0/settings.ini",
+				"/home/doug/.fluxbox/styles/tiwanaku/theme.cfg",
+				"/home/doug/.fluxbox/styles/Template/theme.cfg",
+				"/home/doug/.fvwm/Colorsets",
+				"/home/doug/.fvwm/Menus",
+				"/home/doug/.config/jgmenu/jgmenui3rc",
+				"/home/doug/.config/jgmenu/jgmenudwmrc",
+				"/home/doug/.config/jgmenu/jgmenudkrc",
+				"/home/doug/.fluxbox/apps",
+				"/home/doug/.config/dk/sxhkdrc",
+				"/mnt/public/build/void-mklive/void-desktop-build.sh",
+				"/mnt/public/build/void-mklive/void-laptop-build.sh",
+				"/mnt/public/build/void-mklive/void-emacs-build.sh",
+				"/mnt/public/build/void-mklive/void-fluxbox-build.sh",
+				"/mnt/public/build/void-mklive/void-openbox-build.sh",
+				"/mnt/public/build/void-mklive/void-minimal-build.sh",
+				"/home/doug/.config/tint2/tint2rc",
+				"/home/doug/.config/jgmenu/jgfvwmrc",
+				"/home/doug/.config/jgmenu/jgmenurc",
+				"/home/doug/.fvwm/config",
+				"/home/doug/.config/jgmenu/jgmouserc",
+				"/run/media/doug/SDHC-64GB/Backups/VALKYRIE.2023-01-02_1672687021/.config/dk/dkrc",
+				"/mnt/public/build/dwm/config.def.h",
+				"/home/doug/.fluxbox/styles/maya/theme.cfg",
+				"/home/doug/.fluxbox/styles/aztec/theme.cfg",
+				"/home/doug/.config/i3/config",
+				"/home/doug/.fluxbox/keys",
+				"/home/doug/.fvwm/Bindings",
+				"/home/doug/.fvwm/Functions",
+				"/home/doug/.shell_aliases",
+				"/home/doug/.fluxbox/startup",
+				"/home/doug/.bashrc",
+				"/etc/sudoers.tmp",
+				"/home/doug/.config/dk/dkrc",
+				"/home/doug/.fvwm/Modules",
+				"/home/doug/.config/jgmenu/prepend.csv",
+				"/home/doug/temp/nvme_temp.pl",
+				"/mnt/public/build/dwm/config.h",
+				"/mnt/public/build/st/config.h",
+				"/mnt/public/build/st/hybrid.txt",
+				"/mnt/public/build/st/config.def.h",
+				"/home/doug/conky/conkytaorc",
+				"/home/doug/conky/conkytao10rc",
+				"/home/doug/.config/polybar/config.ini",
+				"/home/doug/.config/polybar/master.conf",
+				"/home/doug/bin/sysinfo-applet.sh",
+				"/home/doug/bin/ConkyDesktop.sh",
+				"/home/doug/bin/fluxbox-bar.sh",
+				"/home/doug/bin/dkwm-bar.sh",
+				"/home/doug/.fluxbox/styles/roswell/theme.cfg",
+				"/home/doug/.config/i3/autostart",
+				"/home/doug/.fvwm/autostart",
+				"/home/doug/.xinitrc",
+				"/home/doug/conky/conkysysinforc",
+				"/home/doug/conky/conkyhinforc",
+				"/home/doug/conky/conkyvertrc",
+				"/home/doug/conky/conkyfluxboxrc",
+				"/home/doug/bin/ConkyTao.sh",
+				"/home/doug/.conkyrc",
+				"/home/doug/.Xprofile",
+				"/run/media/doug/SDHC-16G-01/backups/WILLOW.2022-10-15_1665886982/.xprofile",
+				"/run/media/doug/TOSHIBA-2TB/Backups/ZOE.2022-12-19_1671475794/.Xprofile",
+				"/home/doug/.config/mc/mc.ext",
+				"/home/doug/bin/local-backup.sh",
+				"/usr/share/themes/Redmond/gtk-2.0/gtkrc",
+				"/home/doug/.local/share/themes/Columbia/gtk-2.0/gtkrc",
+				"/home/doug/.config/polybar/modules.conf",
+				"/home/doug/.config/jgmenu/jgmenuboxrc",
+				"/home/doug/.config/polybar/jgmenubarrc",
+				"/home/doug/Documents/Vivaldi Passwords.csv",
+				"/home/doug/.config/jgmenu/append.csv",
+				"/home/doug/.config/polybar/modules.temp.toshiba",
+				"/mnt/public/build/slstatus/config.def.h",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/local-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media2T-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media4G-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media16G-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media64-backup.sh",
+				"/mnt/public/build/void-mklive/dracut/vmklive/adduser.sh",
+				"/mnt/public/build/slstatus/config.h",
+				"/etc/rc.conf",
+				"/home/doug/.config/jgmenu/jgmendkrc",
+				"/home/doug/.config/neofetch/config.conf",
+				"/home/doug/.fluxbox/init",
+				"/run/media/doug/SDHC-64GB/Backups/ZOE.2022-12-25_1672002788/.fluxbox/apps",
+				"/home/doug/.fluxbox/menu",
+				"/run/media/doug/SDHC-64GB/Backups/ZOE.2022-12-25_1672002788/.xinitrc",
+				"/home/doug/.Xmodmap"
+			],
+			"find":
+			{
+				"height": 27.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"#5799EF",
+					"color",
+					"nmap",
+					"NORMAL",
+					"#3B3B3B",
+					"#7F7F7F",
+					"#D2D2D2",
+					"#1D1D1D",
+					"NORMAL",
+					"0x5ff",
+					"Print",
+					"$mod+j",
+					"voffset 8",
+					"voffset 6",
+					"tpad",
+					"NORMAL",
+					"wlp1s0",
+					"NORMAL",
+					"dkmenu",
+					"dk-menu",
+					"0x5",
+					"NORMAL",
+					"wlp1s0",
+					"NORMAL",
+					"0x5ff",
+					"NORMAL",
+					"Menu",
+					"0x5ff",
+					"NORMAL",
+					"{NORMAL}"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"#4A83CC",
+					"0x67f",
+					"#313131",
+					"#838383",
+					"#1F1F1F",
+					"0x67f",
+					"voffset 2",
+					"voffset 8",
+					"0x67f",
+					"wlp2s0",
+					"0x67f",
+					"wlp2s0",
+					"0x67f",
+					"{0x67f}"
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 27.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 50.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1920.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/doug/Documents/linux_bak/To update git",
+					"settings":
+					{
+						"buffer_size": 296,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 130.0,
+				"history":
+				[
+					"ls"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/mnt/public/build/cdw-0.8.1/INSTALL",
+				"/home/doug/bin/media2T-backup.sh",
+				"/home/doug/bin/media64-backup.sh",
+				"/home/doug/bin/media16G-backup.sh",
+				"/home/doug/bin/media4G-backup.sh",
+				"/home/doug/.Xresources",
+				"/home/doug/.config/kitty/kitty.conf",
+				"/home/doug/.config/alacritty/alacritty.yml",
+				"/usr/local/bin/cpu_temp.pl",
+				"/home/doug/.config/polybar/modules.temp",
+				"/home/doug/conky/conkyhorizrc",
+				"/home/doug/.config/gtk-3.0/settings.ini",
+				"/home/doug/.fluxbox/styles/tiwanaku/theme.cfg",
+				"/home/doug/.fluxbox/styles/Template/theme.cfg",
+				"/home/doug/.fvwm/Colorsets",
+				"/home/doug/.fvwm/Menus",
+				"/home/doug/.config/jgmenu/jgmenui3rc",
+				"/home/doug/.config/jgmenu/jgmenudwmrc",
+				"/home/doug/.config/jgmenu/jgmenudkrc",
+				"/home/doug/.fluxbox/apps",
+				"/home/doug/.config/dk/sxhkdrc",
+				"/mnt/public/build/void-mklive/void-desktop-build.sh",
+				"/mnt/public/build/void-mklive/void-laptop-build.sh",
+				"/mnt/public/build/void-mklive/void-emacs-build.sh",
+				"/mnt/public/build/void-mklive/void-fluxbox-build.sh",
+				"/mnt/public/build/void-mklive/void-openbox-build.sh",
+				"/mnt/public/build/void-mklive/void-minimal-build.sh",
+				"/home/doug/.config/tint2/tint2rc",
+				"/home/doug/.config/jgmenu/jgfvwmrc",
+				"/home/doug/.config/jgmenu/jgmenurc",
+				"/home/doug/.fvwm/config",
+				"/home/doug/.config/jgmenu/jgmouserc",
+				"/run/media/doug/SDHC-64GB/Backups/VALKYRIE.2023-01-02_1672687021/.config/dk/dkrc",
+				"/mnt/public/build/dwm/config.def.h",
+				"/home/doug/.fluxbox/styles/maya/theme.cfg",
+				"/home/doug/.fluxbox/styles/aztec/theme.cfg",
+				"/home/doug/.config/i3/config",
+				"/home/doug/.fluxbox/keys",
+				"/home/doug/.fvwm/Bindings",
+				"/home/doug/.fvwm/Functions",
+				"/home/doug/.shell_aliases",
+				"/home/doug/.fluxbox/startup",
+				"/home/doug/.bashrc",
+				"/etc/sudoers.tmp",
+				"/home/doug/.config/dk/dkrc",
+				"/home/doug/.fvwm/Modules",
+				"/home/doug/.config/jgmenu/prepend.csv",
+				"/home/doug/temp/nvme_temp.pl",
+				"/mnt/public/build/dwm/config.h",
+				"/mnt/public/build/st/config.h",
+				"/mnt/public/build/st/hybrid.txt",
+				"/mnt/public/build/st/config.def.h",
+				"/home/doug/conky/conkytaorc",
+				"/home/doug/conky/conkytao10rc",
+				"/home/doug/.config/polybar/config.ini",
+				"/home/doug/.config/polybar/master.conf",
+				"/home/doug/bin/sysinfo-applet.sh",
+				"/home/doug/bin/ConkyDesktop.sh",
+				"/home/doug/bin/fluxbox-bar.sh",
+				"/home/doug/bin/dkwm-bar.sh",
+				"/home/doug/.fluxbox/styles/roswell/theme.cfg",
+				"/home/doug/.config/i3/autostart",
+				"/home/doug/.fvwm/autostart",
+				"/home/doug/.xinitrc",
+				"/home/doug/conky/conkysysinforc",
+				"/home/doug/conky/conkyhinforc",
+				"/home/doug/conky/conkyvertrc",
+				"/home/doug/conky/conkyfluxboxrc",
+				"/home/doug/bin/ConkyTao.sh",
+				"/home/doug/.conkyrc",
+				"/home/doug/.Xprofile",
+				"/run/media/doug/SDHC-16G-01/backups/WILLOW.2022-10-15_1665886982/.xprofile",
+				"/run/media/doug/TOSHIBA-2TB/Backups/ZOE.2022-12-19_1671475794/.Xprofile",
+				"/home/doug/.config/mc/mc.ext",
+				"/home/doug/bin/local-backup.sh",
+				"/usr/share/themes/Redmond/gtk-2.0/gtkrc",
+				"/home/doug/.local/share/themes/Columbia/gtk-2.0/gtkrc",
+				"/home/doug/.config/polybar/modules.conf",
+				"/home/doug/.config/jgmenu/jgmenuboxrc",
+				"/home/doug/.config/polybar/jgmenubarrc",
+				"/home/doug/Documents/Vivaldi Passwords.csv",
+				"/home/doug/.config/jgmenu/append.csv",
+				"/home/doug/.config/polybar/modules.temp.toshiba",
+				"/mnt/public/build/slstatus/config.def.h",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/local-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media2T-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media4G-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media16G-backup.sh",
+				"/mnt/public/build/void-mklive/Laptop/etc/skel/bin/media64-backup.sh",
+				"/mnt/public/build/void-mklive/dracut/vmklive/adduser.sh",
+				"/mnt/public/build/slstatus/config.h",
+				"/etc/rc.conf",
+				"/home/doug/.config/jgmenu/jgmendkrc",
+				"/home/doug/.config/neofetch/config.conf",
+				"/home/doug/.fluxbox/init",
+				"/run/media/doug/SDHC-64GB/Backups/ZOE.2022-12-25_1672002788/.fluxbox/apps",
+				"/home/doug/.fluxbox/menu",
+				"/run/media/doug/SDHC-64GB/Backups/ZOE.2022-12-25_1672002788/.xinitrc",
+				"/home/doug/.Xmodmap"
+			],
+			"find":
+			{
+				"height": 27.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"#5799EF",
+					"color",
+					"nmap",
+					"NORMAL",
+					"#3B3B3B",
+					"#7F7F7F",
+					"#D2D2D2",
+					"#1D1D1D",
+					"NORMAL",
+					"0x5ff",
+					"Print",
+					"$mod+j",
+					"voffset 8",
+					"voffset 6",
+					"tpad",
+					"NORMAL",
+					"wlp1s0",
+					"NORMAL",
+					"dkmenu",
+					"dk-menu",
+					"0x5",
+					"NORMAL",
+					"wlp1s0",
+					"NORMAL",
+					"0x5ff",
+					"NORMAL",
+					"Menu",
+					"0x5ff",
+					"NORMAL",
+					"{NORMAL}"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"#4A83CC",
+					"0x67f",
+					"#313131",
+					"#838383",
+					"#1F1F1F",
+					"0x67f",
+					"voffset 2",
+					"voffset 8",
+					"0x67f",
+					"wlp2s0",
+					"0x67f",
+					"wlp2s0",
+					"0x67f",
+					"{0x67f}"
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/doug/Documents/linux_bak/To update git",
+							"selected": true,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 296,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"stack_multiselect": false,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 27.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,1,0,0,0,46,1920,1080,1920,1080,0",
+			"project": "",
+			"replace":
+			{
+				"height": 50.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

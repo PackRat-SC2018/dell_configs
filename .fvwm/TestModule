@@ -1,0 +1,31 @@
+# FvwmPager
+#
+# This module displays the location of the windows on the various Pages
+# and Desks. This is setup to show only the Pages on the current Desk.
+DestroyModuleConfig FvwmPager:*
+*FvwmPager: Geometry +4+4
+*FvwmPager: DeskTopScale 28
+*FvwmPager: Rows 1
+*FvwmPager: Columns 2
+*FvwmPager: Colorset * 20
+*FvwmPager: HilightColorset * 21
+*FvwmPager: WindowColorsets 22 23
+*FvwmPager: Font None
+*FvwmPager: NoStartIconic
+*FvwmPager: NoMiniIcons
+*FvwmPager: UseSkipList
+*FvwmPager: WindowLabelFormat %i
+*FvwmPager: Balloons null
+*FvwmPager: BalloonStringFormat %i
+*FvwmPager: BalloonFore #000000
+*FvwmPager: BalloonBack #D8D8D8
+*FvwmPager: BalloonFont "xft:DejaVu Sans Mono:Book:size=8:antialias=True:hintstyle=slight"
+*FvwmPager: BalloonBorderWidth 1
+*FvwmPager: BalloonBorderColor #2E2E2E
+*FvwmPager: BalloonYOffset +5
+*FvwmPager: WindowMinSize 3
+*FvwmPager: WindowBorderWidth 1
+*FvwmPager: NoShapeLabels
+*FvwmPager: LabelsAbove
+*FvwmPager: Font "xft:Fira Sans:Regular:size=9:antialias=True:hintstyle=slight"
+*FvwmPager: SmallFont none

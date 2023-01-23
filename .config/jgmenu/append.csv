@@ -1,0 +1,7 @@
+^sep()
+Lock Screen,i3lock --color "#373668",system-lock-screen
+Suspend,`loginctl suspend`,system-lock-screen
+Reboot,`loginctl reboot`,system-reboot
+Shutdown,`loginctl poweroff`,system-log-out
+^sep()
+Log Off,session-logout >/dev/null 2>&1 || pkill -15 -t tty"$XDG_VTNR" Xorg,system-log-out

@@ -1,0 +1,133 @@
+# temps for dell laptop
+
+[module/core0temp]
+type = custom/script
+exec = sensors coretemp-isa-0000 | awk '/Core 0:/{gsub("+","");print $3}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = " "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/core1temp]
+type = custom/script
+exec = sensors coretemp-isa-0000 | awk '/Core 1:/{gsub("+","");print $3}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = " "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/core2temp]
+type = custom/script
+exec = sensors coretemp-isa-0000 | awk '/Core 2:/{gsub("+","");print $3}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = " "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/core3temp]
+type = custom/script
+exec = sensors coretemp-isa-0000 | awk '/Core 3:/{gsub("+","");print $3}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = " "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/coretemp-0000]
+type = custom/script
+exec = sensors coretemp-isa-0000 | awk '/Package id 0:/{gsub("+","");print $4}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = "  "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/nvmetemp]
+type = custom/script
+exec = sensors nvme-pci-0300 | awk '/Composite:/{gsub("+","");print $2}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = "  "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/cputemp-icon]
+type = custom/script
+;exec-if = cputemp
+exec = /usr/local/bin/cpu_temp.pl
+interval = 3
+;format-prefix =
+;format-prefix = "Temp: "
+format-prefix = "  "
+format = <label>
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+label-padding = 0
+
+[module/cputemp]
+type = custom/script
+;exec-if = cputemp
+exec = /usr/local/bin/cpu_temp.pl
+interval = 3
+format-prefix =
+format = <label>
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-padding = 0
+
+[module/coretemp-x]
+type = custom/script
+exec = sensors coretemp-isa-0000 | awk '/Package id 0:/{gsub("+","");print $4}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = ""
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/nvmetemp-x]
+type = custom/script
+exec = sensors nvme-pci-0300 | awk '/Composite:/{gsub("+","");print $2}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = ""
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}

@@ -1,0 +1,17 @@
+# autostart file for i3 window manager
+#
+
+# kill sxhkd if running
+exec killall -q sxhkd &
+
+# Background and wallpaper
+
+exec xsetroot -solid "#384778"
+
+# single monitor
+exec "feh --no-fehbg --bg-center --randomize $HOME/wallpaper/*"
+
+# polybar - example of script startup
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# exec_always --no-startup-id $HOME/bin/i3wm-bar.sh &

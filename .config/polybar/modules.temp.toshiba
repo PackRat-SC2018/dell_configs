@@ -1,0 +1,431 @@
+[module/k10temp]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+; k10temp: temp1 /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 10
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 80
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+; Default: true
+units = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = %temperature-c%
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.warning}
+label-warn-background = ${colors.background}
+
+; Requires the <ramp> tag
+; The icon selection will range from `base-temperature` to `warn-temperature`,
+; temperatures at and above `warn-temperature` will use the last icon
+; and temperatures at and below `base-temperature` will use `ramp-0`. 
+; All other icons are distributed evenly between the two temperatures.
+ramp-0 = "﬙"
+ramp-1 = "﬙"
+ramp-2 = "﬙"
+ramp-foreground = ${colors.dimgray}
+
+label-foreground =  ${colors.dimgray}
+label-background =  ${colors.background}
+label-padding = 1
+
+[module/radeontemp]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+; radeon: temp1 /sys/devices/pci0000:00/0000:00:01.0/hwmon/hwmon1/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:01.0/hwmon/hwmon1/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 70
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+; Default: true
+units = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = %temperature-c%
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.yellow}
+
+; Requires the <ramp> tag
+; The icon selection will range from `base-temperature` to `warn-temperature`,
+; temperatures at and above `warn-temperature` will use the last icon
+; and temperatures at and below `base-temperature` will use `ramp-0`. 
+; All other icons are distributed evenly between the two temperatures.
+ramp-0 = ""
+ramp-1 = ""
+ramp-2 = ""
+ramp-foreground = ${colors.dimgray}
+
+label-foreground =  ${colors.dimgray}
+label-background =  ${colors.background}
+label-padding = 1
+
+[module/temp00]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+; k10temp: temp1 /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 80
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+; Default: true
+units = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+; format = <ramp> <label>
+format = <label>
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <label-warn>
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = %temperature-c%
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.warning}
+
+; Requires the <ramp> tag
+; The icon selection will range from `base-temperature` to `warn-temperature`,
+; temperatures at and above `warn-temperature` will use the last icon
+; and temperatures at and below `base-temperature` will use `ramp-0`. 
+; All other icons are distributed evenly between the two temperatures.
+ramp-0 = "﬙"
+ramp-1 = "﬙"
+ramp-2 = "﬙"
+ramp-foreground = ${colors.dimgray}
+
+label-foreground =  ${colors.dimgray}
+label-background =  ${colors.background}
+label-padding = 1
+
+[module/temp01]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+; radeon: temp1 /sys/devices/pci0000:00/0000:00:01.0/hwmon/hwmon1/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:01.0/hwmon/hwmon1/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 70
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+; Default: true
+units = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+; format = <ramp> <label>
+format = <label>
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = GPU: %temperature-c%
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = GPU: %temperature-c%
+label-warn-foreground = ${colors.yellow}
+
+; Requires the <ramp> tag
+; The icon selection will range from `base-temperature` to `warn-temperature`,
+; temperatures at and above `warn-temperature` will use the last icon
+; and temperatures at and below `base-temperature` will use `ramp-0`. 
+; All other icons are distributed evenly between the two temperatures.
+ramp-0 = ""
+ramp-1 = ""
+ramp-2 = ""
+ramp-foreground = ${colors.dimgray}
+
+label-foreground =  ${colors.dimgray}
+label-background =  ${colors.background}
+label-padding = 1
+
+; temperature modules using sensors
+; to avoid hwmon changes with kernel updates
+
+[module/cputemp000]
+type = custom/script
+exec = sensors -u k10temp-pci-00c3 | awk '/temp1_input/{gsub("+","");print $2}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = " "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/cputemp001]
+type = custom/script
+exec = sensors -u k10temp-pci-00c3 | awk '/temp1_input/{gsub("+","");print $2}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = ""
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/gputemp000]
+type = custom/script
+exec = sensors -u radeon-pci-008 | awk '/temp1_input/{gsub("+","2");print $2}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = " "
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/gputemp001]
+type = custom/script
+exec = sensors -u radeon-pci-008 | awk '/temp1_input/{gsub("+","2");print $2}' | sed 's:\\.[^|]*::g'
+interval = 3
+format = <label>°C
+label-padding = 0
+format-prefix = ""
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-background = ${colors.background}
+
+[module/cputemp-icon]
+type = custom/script
+;exec-if = cputemp
+exec = /usr/local/bin/cpu-temp.pl
+interval = 3
+;format-prefix =
+;format-prefix = "Temp: "
+format-prefix = "  "
+format = <label>
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+label-padding = 0
+
+[module/cputemp]
+type = custom/script
+;exec-if = cputemp
+exec = /usr/local/bin/cpu-temp.pl
+interval = 3
+format-prefix =
+format = <label>
+format-prefix-foreground = ${colors.dimgray}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.dimgray}
+format-background = ${colors.background}
+label-padding = 0
+
+[module/dk-temp]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 75
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+; Default: true
+units = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = %temperature-c%
+label-foreground = ${colors.dimgray}
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.warning}
+
+; Requires the <ramp> tag
+; The icon selection will range from `base-temperature` to `warn-temperature`,
+; temperatures at and above `warn-temperature` will use the last icon
+; and temperatures at and below `base-temperature` will use `ramp-0`. 
+; All other icons are distributed evenly between the two temperatures.
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.dimgray}

@@ -1,0 +1,339 @@
+! Xft settings ---------------------------------------------------------
+Xft.autohint: 1
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xft.dpi: 96
+Xcursor.size:11
+
+! special
+*.foreground:   #d4d4d4
+*.background:   #1d1f21
+*.cursorColor:  #d4d4d4
+
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
+
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! blue
+*.color4:       #215a89
+*.color12:      #1d7ac8
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707070
+*.color15:      #dfdfdf
+
+! Urxvt ----------------------------------------------------------------
+
+URxvt*termName:          rxvt-256color
+URxvt*geometry:          92x32
+URxvt.buffered:          true
+URxvt*scrollBar:         false
+URxvt*scrollBar_right:   false
+URxvt*jumpScroll:        true
+URxvt*skipScroll:        true
+URxvt.secondaryScroll:   true
+URxvt*scrollstyle:       plain
+URxvt*scrollTtyOutput:   true
+URxvt*saveLines:         4096
+URxvt*internalBorder:    3
+URxvt.cutchars:          "'*,<>[]{}|-_@:/()│"
+
+URxvt*transparent:       false
+URxvt*depth:             32
+URxvt.background:        [98]#0C0D0D
+URxvt.foreground:        #DBDBDB  
+URxvt*fading:            33
+URxvt*fadeColor:         #0C0D0D
+URxvt*highlightColor:    #D1C384
+URxvt*highlightTextColor:  #0D0D0D
+
+!URxvt.font:              -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1
+!URxct.boldFont:          -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1
+!*antialias:              true
+!*autohint:               true
+
+URxvt.font:              xft:JetBrains Mono:Regular:size=10:antialias=true:autohint=true
+URxvt.boldFont:          xft:JetBrains Mono:Regular:size=10:antialias=true:autohint=true
+URxvt.letterSpace: 1
+
+URxvt.perl-ext-common: default,matcher
+!URxvt.clipboard.autocopy: true
+!URxvt.keysym.M-c: perl:clipboard:copy
+!URxvt.keysym.M-v: perl:clipboard:paste
+!URxvt.matcher.button: 1
+URxvt.urlLauncher:      firefox
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    7
+URxvt.tabbed.tab-bg:    0
+
+! XTerminals ------------------------------------------------------------
+
+UXTerm.termName: UXTerm-256color
+!UXTerm.vt100..locale: true
+UXTerm.vt100..locale: false
+UXTerm.vt100..utf8: true
+UXTerm.vt100.saveLines: 4096
+UXTerm.vt100.scrollBar:          false
+UXTerm.vt100.rightScrollBar:     false
+UXTerm.vt100.geometry:           96x32
+!UXTerm.vt100.background:        #101012
+!UXTerm.vt100.foreground:        #E5E5E5
+!UXTerm.vt100.cursorColor:       #E5E5E5
+!UXTerm.vt100.font:               -xos4-terminus-medium-r-normal-*-16-160-72-72-c-80-iso8859-1
+!UXTerm.vt100.boldFont:           -xos4-terminus-medium-r-normal-*-16-160-72-72-c-80-iso8859-1
+UXTerm.vt100.faceName:           xft:JetBrains Mono:Regular:size=11:antialias=true:autohint=true
+!UXTerm.vt100.faceName:          xft:fira code:style=regular:size=9:antialias=true:autohint=true
+
+UXTerm.vt100.metaSendsEscape: true
+UXTerm.vt100.backarrowKey: false
+UXTerm.ttyModes: erase ^?
+
+UXTerm.vt100.translations: #override \n\
+    Ctrl <Key>M: maximize() \n\
+    Ctrl <Key>R: restore()
+
+UXTerm*VT100.Translations: #override \
+     Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+     Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+
+XTerm.termName: xterm-256color
+!XTerm.vt100..locale: true
+XTerm.vt100..locale: false
+XTerm.vt100..utf8: true
+XTerm.vt100.saveLines: 4096
+XTerm.vt100.scrollBar:          false
+XTerm.vt100.rightScrollBar:     false
+XTerm.vt100.geometry:           96x32
+!XTerm.vt100.background:        #101012
+!XTerm.vt100.foreground:        #E5E5E5
+!XTerm.vt100.cursorColor:       #E5E5E5
+!XTerm.vt100.font:               -xos4-terminus-medium-r-normal-*-16-160-72-72-c-80-iso8859-1
+!XTerm.vt100.boldFont:           -xos4-terminus-medium-r-normal-*-16-160-72-72-c-80-iso8859-1
+XTerm.vt100.faceName:           xft:JetBrains Mono:Book:size=11:antialias=true:autohint=true
+!XTerm.vt100.faceName:          xft:fira code:style=regular:size=9:antialias=true:autohint=true
+
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+
+XTerm.vt100.translations: #override \n\
+    Ctrl <Key>M: maximize() \n\
+    Ctrl <Key>R: restore()
+
+XTerm*VT100.Translations: #override \
+     Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+     Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+
+! X-11 Apps------------------------------------------------------------------
+xpdf*Background:    #CFC6BE
+xpdf*Foreground:    #050505
+xpdf*FontList:      -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1
+xpdf*initialZoom:   page
+xpdf*urlCommand:    firefox %s
+xpdf*textEncoding:  utf-8
+
+!source: https://wiki.archlinux.org/index.php/X_resources
+!XCalc-----------------------------------------------------------------------
+XCalc*geometry:                        256x400
+XCalc*ti.bevel.background:             #111111
+XCalc*ti.bevel.screen.background:      #000000
+XCalc*ti.bevel.screen.DEG.background:  #000000
+XCalc*ti.bevel.screen.DEG.foreground:  #1E8C86
+XCalc*ti.bevel.screen.GRAD.background: #000000
+XCalc*ti.bevel.screen.GRAD.foreground: #1E8C86
+XCalc*ti.bevel.screen.RAD.background:  #000000
+XCalc*ti.bevel.screen.RAD.foreground:  #1E8C86
+XCalc*ti.bevel.screen.INV.background:  #000000
+XCalc*ti.bevel.screen.INV.foreground:  Red
+XCalc*ti.bevel.screen.LCD.background:  #000000
+XCalc*ti.bevel.screen.LCD.foreground:  #1E8C86
+XCalc*ti.bevel.screen.LCD.shadowWidth: 0
+XCalc*ti.bevel.screen.M.background:    #000000
+XCalc*ti.bevel.screen.M.foreground:    #1E8C86
+XCalc*ti.bevel.screen.P.background:    #000000
+XCalc*ti.bevel.screen.P.foreground:    #D9D918
+XCalc*ti.Command.foreground:  #ECECEC
+XCalc*ti.Command.background:  #474747
+XCalc*Cursor:                 hand2
+XCalc*ShapeStyle:             rectangle
+!XCalc*Font:       6x13
+XCalc*Font:       -*-terminus-medium-r-normal-*-14-140-*-*-*-*-iso10646-1
+
+! XCalc button colors
+XCalc*ti.button4.background:	#C52934
+XCalc*ti.button5.background:	#911E26
+
+XCalc.ti.button27.background:	#4D175C
+XCalc.ti.button28.background:	#4D175C
+XCalc.ti.button29.background:	#4D175C
+XCalc.ti.button32.background:	#4D175C
+XCalc.ti.button33.background:	#4D175C
+XCalc.ti.button34.background:	#4D175C
+
+XCalc.ti.button35.background:	#2F7A3E
+XCalc.ti.button40.background:	#2F7A3E
+XCalc.ti.button45.background:	#2F7A3E
+XCalc.ti.button50.background:	#2F7A3E
+
+XCalc.ti.button37.background:	#346BA1
+XCalc.ti.button38.background:	#346BA1
+XCalc.ti.button39.background:	#346BA1
+XCalc.ti.button42.background:	#346BA1
+XCalc.ti.button43.background:	#346BA1
+XCalc.ti.button44.background:	#346BA1
+XCalc.ti.button47.background:	#346BA1
+XCalc.ti.button48.background:	#346BA1
+XCalc.ti.button49.background:	#346BA1
+XCalc.ti.button52.background:	#346BA1
+
+XCalc*ti.button53.background:	#998031
+XCalc*ti.button54.background:	#806B29
+XCalc*ti.button55.background:	#665621
+
+!dzen2.font:	-*-terminus-medium-r-normal-*-14-140-*-*-*-*-iso10646-1
+dzen2.font:     Roboto Mono:size=11:antialias=true:autohint=true
+dzen2.foreground: #D2D2D2
+dzen2.background: #191919
+!
+
+! xosview
+xosview*geometry: 256x240+1326+144
+xosview*font: -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso8859-1
+!xosview*font: -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
+!xosview*font: -*-fixed-medium-r-normal-*-10-70-100-100-c-60-iso8859-1
+xosview*background: #CCCBC6
+xosview*foreground: #21211F
+xosview*meterLabelColor: #21211F
+xosview*captions: true
+xosview*usedlabels: true
+xosview*usedLabelColor: #21211F
+xosview*enableStipple: false
+!xosview*graphNumCols: 0
+xosview*load: true
+xosview*loadIdleColor: #CCCBC6
+xosview*loadProcColor: #424266
+xosview*loadWarnColor: #D7AE2E
+xosview*loadCritColor: #DA1613
+!xosview*loadIdleColor:
+xosview*loadPriority: 30
+xosview*loadGraph: false
+xosview*cpu: true
+xosview*cpuGraph: false
+xosview*cpuPriority: 30
+xosview*cpuUsedFormat: percent
+xosview*cpuFormat: single
+!xosview*cpuFields: USED
+xosview*cpuUserColor: #424266
+xosview*cpuSystemColor: #424266
+xosview*cpuInterruptColor: #424266
+xosview*cpuSInterruptColor: #424266
+xosview*cpuWaitColor: #424266
+xosview*cpuGuestColor: #424266
+xosview*cpuNiceGuestColor: #424266
+xosview*cpuStolenColor: #424266
+xosview*cpuFreeColor: #CCCBC6
+xosview*mem: true
+xosview*memPriority: 30
+xosview*memFreeColor: #CCCBC6
+xosview*memUsedColor: #424266
+xosview*memSharedColor: #424266
+xosview*memBufferColor: #424266
+xosview*memCacheColor: #424266
+xosview*memSlabColor: #424266
+!
+xosview*swap: false
+xosview*page: false
+xosview*gfx: false
+xosview*disk: false
+xosview*acpitemp: false
+!
+xosview*coretemp: true
+xosview*coretempDisplayType: maximum
+!xosview*coretempHigh: 30
+xosview*coretempHighest: 120
+xosview*coretempPriority: 30
+xosview*coretempActColor: #424266
+xosview*coretempIdleColor: #EE9A00
+xosview*coretempHighColor: #EE0000
+xosview*coretempUsedFormat: autoscale
+!
+xosview*battery: true
+xosview*batteryLeftColor: #424266
+xosview*batteryUsedColor: #CCCBC6
+xosview*batteryChargeColor: #3D3D66
+xosview*batteryFullColor: #424266
+xosview*batteryLowColor: #D7AE2E
+xosview*batteryCritColor: #DA1613
+xosview*batteryUsedFormat: percent
+xosview*batteryPriority: 30
+
+xosview*wireless: true
+xosview*PoorQualityColor: #DA1613
+xosview*FairQualityColor: #D7AE2E
+xosview*GoodQualityColor: #424266
+xosview*wirelessUsedColor: #CCCBC6
+xosview*wirelessPriority: 30
+xosview*net: true
+xosview*netIface: wlp1s0
+xosview*netUsedFormat: autoscale
+xosview*netInColor: #008B8B
+xosview*netOutColor: #8B5A00
+xosview*netBackground: #CCCBC6
+xosview*netPriority: 30
+xosview*netGraph: false
+
+! XClock
+!=======================================
+XClock*analog: true
+XClock*twentyfour: true
+XClock*width: 116
+XClock*height: 116
+XClock*padding: 4
+XClock*update: 1
+XClock*chime: false
+XClock*render: true
+XClock*face: -xos4-terminus-medium-r-normal-*-14-140-*-*-*-*-iso8859-1
+XClock*sharp: false
+XClock*buffer: false
+! dark clock
+XClock*background: #0F0F0F
+XClock*foreground: #D9D9D9
+XClock*hands: #D9D9D9
+XClock*highlight: #CCCCCC
+XClock*hourColor: #BBBBBB
+XClock*minuteColor: #BBBBBB
+XClock*secondColor: #B34757
+XClock*majorColor: #AAAAAA
+XClock*minorColor: #AAAAAA
+! light clock
+!XClock*background: #CCCBC6
+!XClock*foreground: #21211F
+!XClock*hands: #21211F
+!XClock*highlight: #73736C
+!XClock*hourColor: #30302E
+!XClock*minuteColor: #30302E
+!XClock*secondColor: #B35047
